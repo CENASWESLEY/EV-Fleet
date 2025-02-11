@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEA DATALIZE (Maintenance)</title>
+
+    <!---------------- Logo ---------------->
+    <link rel="shortcut icon" href="../../../assets/Overview/Logo/DATALIZE.png" type="image/x-icon">
+
+    <!---------------- CSS ---------------->
+    <link rel="stylesheet" href="../../2.Overview/Overview.css">
+    <link rel="stylesheet" href="../../5.Maintenance/Maintenance_First/Maintenance_First.css">
+    <link rel="stylesheet" href="../../5.Maintenance/Maintenance_Second/Maintenance_Second.css">
+
+    <!---------------- Fonts ---------------->
+    
+    <!-- Urbanist | Poppins | inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+</head>
+<body>
+    
+    <div class="main">
+
+        <header-menu></header-menu>
+
+        <assistant-left></assistant-left>
+        <assistant-right-m></assistant-right-m>
+        
+
+        <div class="section_content">
+            <div class="section_content-top">
+                    <img src="../../../assets/Charging_Station/BG.png" alt="" class="BG">
+                <div class="section_content-top-details">
+                    <div class="section_content-top-details-banner">
+                        <div class="section_content-top-details-banner_calendar">
+                            <p id="calendar">Sunday, 20 October 2024</p>
+                            <br>
+                            <p id="time">00:00:00</p>
+                        </div>
+                        <div class="section_content-top-details-banner_station">
+                            <p>Maintenance</p>
+                            <br>
+                            <div class="section_content-top-details-banner_station-name">
+                                <p id="selectedStation">NONG KHEAM</p> 
+                                <img src="../../../assets/Charging_Station/arrow.png" id="toggleDropdown" alt="Toggle Dropdown">
+                                <div class="section_content-top-details-banner_station-name-dropdown" id="dropdownMenu">
+                                    <div class="section_content-top-details-banner_station-name-dropdown_options" id="stationOptions">
+                                        <!-- ตัวเลือกสถานีจะถูกสร้างขึ้นโดย JavaScript ที่นี่ -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section_content-top-details-banner_charger">
+                            <div class="section_content-top-details-banner_charger_transaction">
+                                <p id="transaction">All Transactions History</p>
+                                <br>
+                                <p id="numberTransaction">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section_content-center-second">
+                <div class="section_content-center-transactions">
+                    <div class="section_content-center-transactions_title">
+                        <p>Transactions</p>
+                        <img src="../../../assets/Charging_Station/Search.png" id="search" alt="">
+                    </div>
+                    <div class="section_content-center-transactions_head">
+                        <p>DATE</p>
+                        <p>CHARGER ID</p>
+                        <p>CONNECTOR ID</p>
+                        <p>ISSUE</p>
+                        <p>START TIME</p>
+                        <p>END TIME</p>
+                        <p>DURATION</p>
+                        <p>TECHNICAL</p>
+                        <p>STATUS</p>
+                        <p>END DATE</p>
+                        <p>OPTIONS</p>
+                    </div>
+
+                    <div class="section_content-center-search" id="section_content-center-search" >
+                        <div class="section_content-center-search_box">
+                            <input type="text" id="boxsearch_db" placeholder="Search date and charger id">
+                            <img src="../../../assets/Charging_Station/Search.png" id="search_db" alt="">
+                        </div>
+                    </div>
+                    <div class="meesage" id="message"></div>
+
+
+
+                    <div class="section_content-center-transactions_head_details" id="transactionTable">
+                        <!--
+                        <div class="section_content-center-transactions_details">
+                            <p>20/10/2024</p>
+                            <p>01</p>
+                            <p>กข-7485</p>
+                            <p>10:33:45</p>
+                            <p>Pending</p>
+                            <p>Pending</p>
+                            <p>Charging</p>
+                            <p>7.5 Kwh</p>
+                            <p>32 %</p>
+                            <p>Pending</p>
+                            <i class="fa-solid fa-ellipsis" id="option" onclick="showDropdownMenu(event, ${transaction.id})"></i>
+                        </div>
+                     -->
+
+                        <!-- Transactions จาก Mysql -->
+                    </div>
+
+                    
+
+                    <div class="section_content-center-transactions_pages">
+                        <div class="section_content-center-transactions_pages_text">
+                            <p>Showing 1 to 10 of 50 entries</p>
+                        </div>
+
+                        <div class="section_content-center-transactions_pages_number">
+                            <div class="section_content-center-transactions_pages_number-arrow_left">
+                                <img src="../../../assets/Charging_Station/Number/Multipage_left.png" id="previous_multipage" alt="">
+                                <img src="../../../assets/Charging_Station/Number/Page_left.png" id="previous_page" alt="">
+                            </div>
+                            <div class="section_content-center-transactions_pages_number_group">
+                                <!-- 
+                                <div class="section_content-center-transactions_pages_number_group_box">
+                                    <p>1</p>
+                                </div>
+                                -->
+                            </div>
+                            <div class="section_content-center-transactions_pages_number-arrow_right">
+                                <img src="../../../assets/Charging_Station/Number/Page_right.png" id="next_page" alt="">
+                                <img src="../../../assets/Charging_Station/Number/Multipage_right.png" id="next_multipage" alt="">
+                            </div>
+                            
+                        </div>
+
+                        <div class="section_content-center-transactions_add">
+                            <p id="addTransaction">Add Transaction</p>
+                        </div>
+                        
+                    </div>
+
+                        <div class="section_content-center-transactions_add-popup">
+                            <div class="section_content-center-transactions_add-popup_menu">
+                                <div class="section_content-center-transactions_add-popup_menu_head">
+                                    <div class="section_content-center-transactions_add_head">
+                                        <p>DATE</p>
+                                        <p>CHARGER ID</p>
+                                        <p>CONNECTOR ID</p>
+                                        <p>ISSUE</p>
+                                        <p>START TIME</p>
+                                        <p>END TIME</p>
+                                        <p>DURATION</p>
+                                        <p>TECHNICAL</p>
+                                        <p>STATUS</p>
+                                        <p>END DATE</p>
+                                    </div>
+                                </div>
+                                <div class="section_content-center-transactions_add-popup_content">
+                                    <div class="section_content-center-transactions_add-popup_content-date">
+                                        <input type="date" placeholder="DD/MM/YYYY" id="date">
+                                    </div>
+                                    <div class="section_content-center-transactions_add-popup_content-charger">
+                                        <input type="number" id="chargernew" placeholder="01" maxlength="11" step="1" required>
+                                    </div>                                    
+                                    <div class="section_content-center-transactions_add-popup_content-connector">
+                                        <input type="number" id="connector" placeholder="1" max="2" min="1"  step="1" required>
+                                    </div>
+                                    <div class="section_content-center-transactions_add-popup_content-issue">
+                                        <div class="section_content-center-transactions_add-popup_content-issue_arrow_up" >
+                                            <img src="../../../assets/Maintenance/Icon/Arrow_up_inactive.png" alt="" id="issueUp">
+                                        </div>
+                                        <p id="issue">Hardware</p>
+                                        <div class="section_content-center-transactions_add-popup_content-issue_arrow_down">
+                                            <img src="../../../assets/Maintenance/Icon/Arrow_down_inactive.png" alt="" id="issueDown">
+                                        </div>
+                                    </div>
+                                    <div class="section_content-center-transactions_add-popup_content-start_time">
+                                        <input type="time" placeholder="HH:MM:SS" id="start_time">
+                                    </div>
+                                    <div class="section_content-center-transactions_add-popup_content-end_time">
+                                        <input type="time" placeholder="HH:MM:SS" id="end_time">
+                                    </div>
+                                    <div class="section_content-center-transactions_add-popup_content-duration">
+                                        <p id="duration">00:00:00</p>
+                                    </div>
+                                    <div class="section_content-center-transactions_add-popup_content-technician">
+                                        <div class="section_content-center-transactions_add-popup_content-technician_arrow_up">
+                                            <img src="../../../assets/Maintenance/Icon/Arrow_up_inactive.png" alt="" id="technicianUp">
+                                        </div>
+                                        <p id="technical">Technical</p>
+                                        <div class="section_content-center-transactions_add-popup_content-technician_arrow_down">
+                                            <img src="../../../assets/Maintenance/Icon/Arrow_down_inactive.png" alt="" id="technicianDown">
+                                        </div>
+                                    </div>
+                                    <div class="section_content-center-transactions_add-popup_content-status">
+                                        <div class="section_content-center-transactions_add-popup_content-status_arrow_up">
+                                            <img src="../../../assets/Maintenance/Icon/Arrow_up_inactive.png" alt="" id="statusUp">
+                                        </div>
+                                        <p id="status">Pending</p>
+                                        <div class="section_content-center-transactions_add-popup_content-status_arrow_down">
+                                            <img src="../../../assets/Maintenance/Icon/Arrow_down_inactive.png" alt="" id="statusDown">
+                                        </div>
+                                    </div>
+                                    <div class="section_content-center-transactions_add-popup_content-end_date">
+                                        <input type="date" placeholder="DD/MM/YYYY" id="end_date">
+                                    </div>
+                                </div>
+                                <div class="section_content-center-transactions_add-popup_bottom">
+                                    <div class="section_content-center-transactions_add-popup_bottom_close">
+                                        <p id="close">Close</p>
+                                    </div>
+                                    <div class="section_content-center-transactions_add-popup_bottom_submit">
+                                        <p id="submit">Submit</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="section_content-center-transactions_dropdown">
+                            <div class="section_content-center-transactions_dropdown_menu">
+                                <div class="section_content-center-transactions_dropdown_menu_id">
+                                    <p>ID</p>
+                                    <p id="idTransaction">01</p>
+                                </div>
+                                <p id="edit">Edit</p>
+                                <p id="delete">Delete</p>
+                            </div>
+                        </div>
+                    -->
+                </div>
+            </div>
+          
+
+        </div>
+    </div>
+
+    <script src="../../../components/Weather/Weather.js"></script>
+    <script src="../../5.Maintenance/Maintenance_Second/Maintenance_Second-Mysql.js"></script>
+    <script src="../../5.Maintenance/Maintenance_Second/Maintenance_Second.js"></script>
+    <script src="../../../components/Assistant/Assistant_left.js"></script>
+    <script src="../../../components/Assistant/Assistant_right-Maintenance.js"></script>
+    <script src="../../../components/Calendar/Calendart.js"></script>
+    <script src="../../../components/Menu/Menu.js"></script>
+    <script src="/components/Animation/Overview-Animation.js"></script>
+    <script src="/components/Animation/Maintenance-Animation.js"></script>
+
+
+        
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEA DATALIZE (Maintenance)</title>
+
+    <!---------------- Logo ---------------->
+    <link rel="shortcut icon" href="../../../assets/Overview/Logo/DATALIZE.png" type="image/x-icon">
+
+    <!---------------- CSS ---------------->
+    <link rel="stylesheet" href="../../2.Overview/Overview.css">
+    <link rel="stylesheet" href="../../5.Maintenance/Maintenance_First/Maintenance_First.css">
+
+    <!---------------- Fonts ---------------->
+    
+    <!-- Urbanist | Poppins | inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+<body>
+    
+    <div class="main">
+        
+        <header-menu></header-menu>
+
+        <assistant-left></assistant-left>
+        <assistant-right-m></assistant-right-m>
+        
+
+        <div class="section_content">
+            <div class="section_content-top">
+                    <img src="../../../assets/Charging_Station/BG.png" alt="" class="BG">
+                <div class="section_content-top-details">
+                    <div class="section_content-top-details-banner">
+                        <div class="section_content-top-details-banner_calendar">
+                            <p id="calendar">Sunday, 20 October 2024</p>
+                            <br>
+                            <p id="time">00:00:00</p>
+                        </div>
+                        <div class="section_content-top-details-banner_station">
+                            <p>Maintenance</p>
+                            <br>
+                            <div class="section_content-top-details-banner_station-name">
+                                <p id="selectedStation">NONG KHEAM</p> 
+                                <img src="../../../assets/Charging_Station/arrow.png" id="toggleDropdown" alt="Toggle Dropdown">
+                                <div class="section_content-top-details-banner_station-name-dropdown" id="dropdownMenu">
+                                    <div class="section_content-top-details-banner_station-name-dropdown_options" id="stationOptions">
+                                        <!-- ตัวเลือกสถานีจะถูกสร้างขึ้นโดย JavaScript ที่นี่ -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section_content-top-details-banner_charger">
+                            <div class="section_content-top-details-banner_charger_available">
+                                <p id="available">Operational</p>
+                                <br>
+                                <p id="numberAvailable">0</p>
+                            </div>
+                            <div class="section_content-top-details-banner_charger_suspended">
+                                <p id="suspended">Suspended</p>
+                                <br>
+                                <p id="numberSuspended">0</p>
+                            </div>
+                            <div class="section_content-top-details-banner_charger_undefined">
+                                <p id="undefined">Undefined</p>
+                                <br>
+                                <p id="numberUndefined">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section_content-center">
+                <!--
+                <div class="section_content-center-card">
+                    <div class="section_content-center-card-details">
+                        <div class="section_content-center-card-details-top">
+                            <p>CHARGER 01</p>
+                            <br>
+                            <p>Available</p>
+                        </div>
+                        <div class="section_content-center-card-details-top-line"></div>
+                        <div class="section_content-center-card-details-top-garbage_truck">
+                            <img src="../../assets/Charging_Station/Garbage_truck.png" alt="">
+                        </div>
+                        <div class="section_content-center-card-details-bottom">
+                            <div class="section_content-center-card-details-bottom-time">
+                                <img src="../../assets/Charging_Station/icons/Time-white.png" alt="">
+                            </div>
+                            <div class="section_content-center-card-details-bottom-energy">
+                                <img src="../../assets/Charging_Station/icons/Charge-white.png" alt="">
+                            </div>
+                            <div class="section_content-center-card-details-bottom-battery">
+                                <img src="../../assets/Charging_Station/icons/Battery-white.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            -->
+
+            </div>
+
+            <div class="section_content-option">
+                <div class="section_content-option_icon">
+                    <img src="../../../assets/Charging_Station/Option_status/3D-inactive.png" class="section_content-option_icon_3D" id="section_content-option_icon_3D" alt="">
+                </div>
+                <div class="section_content-option_icon">
+                    <img src="../../../assets/Charging_Station/Option_status/Connector1.png" class="section_content-option_icon_connector"  id="section_content-option_icon_connector" alt="">
+                </div>
+            </div>
+
+            <div class="section_content-option-station">
+                <div class="section_content-option-station_map">
+                    <img src="/assets/Charging_Station/Station/Station.png" alt="">
+                </div>
+            </div>
+            
+            <div class="section_content-charger_number">
+                <p data-index="1">10</p>
+                <p data-index="2">20</p>
+                <p data-index="3">30</p>
+                <p data-index="4">40</p>
+                <p data-index="5">50</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="/components/Weather/Weather.js"></script>
+    <script src="../../5.Maintenance/Maintenance_First/Maintenance_Fitst-Mysql.js"></script>
+    <script src="../../5.Maintenance/Maintenance_First/Maintenance_First.js"></script>
+    <script src="../../../components/Assistant/Assistant_left.js"></script>
+    <script src="../../../components/Assistant/Assistant_right-Maintenance.js"></script>
+    <script src="../../../components/Calendar/Calendart.js"></script>
+    <script src="../../../components/Menu/Menu.js"></script>
+    <script src="/components/Animation/Overview-Animation.js"></script>
+    <script src="/components/Animation/Maintenance-Animation.js"></script>
+
+
+</body>
+</html>

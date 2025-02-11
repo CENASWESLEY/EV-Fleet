@@ -1,0 +1,21 @@
+
+
+/* Adjust position of Notification*/
+
+.assistant-left_popup-content-group_charger{
+    position: absolute;
+    left: 9.6rem;
+    top: 5rem !important;
+    visibility: hidden;
+    width: 350px;
+    height:650px;
+    background: var(--bg-main-color-white);
+    box-shadow: 0 0 10px var(--box-shadow-black);
+    border-radius: 3rem;
+    justify-content: center;
+    justify-items: center;
+    z-index: var(--z-hard);
+    transform: translateY(5rem); 
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;  /* การเคลื่อนที่และการเปลี่ยนแปลงความโปร่งใส */
+    }

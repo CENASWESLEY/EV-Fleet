@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEA DATALIZE (Setting)</title>
+
+    <!---------------- Logo ---------------->
+    <link rel="shortcut icon" href="../../../assets/Overview/Logo/DATALIZE.png" type="image/x-icon">
+
+    <!---------------- CSS ---------------->
+    <link rel="stylesheet" href="../../2.Overview/Overview.css">
+    <link rel="stylesheet" href="../../6.Setting/Setting_Third/Setting_Third.css">
+
+
+    <!---------------- Fonts ---------------->
+    
+    <!-- Urbanist | Poppins | inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+<body>
+
+    <div class="main">
+
+        <header-menu></header-menu>
+
+        <assistant-left></assistant-left>
+        <assistant-right-s></assistant-right-s>
+        
+        <div class="section_content">
+            <div class="section_content-details">
+                <div class="section_content-details-title">
+                    <div class="section_content-details-title_bg">
+                        <img src="../../../assets/Setting/BG2.png" alt="">
+                    </div>
+                    <div class="section_content-details-title_user">
+                        <img src="/assets/Setting/Avatar/Default_Avatar.jpg" alt="" id="profileOriginal">
+                        <div class="section_content-details-title_user_text">
+                            <p class="name"></p>
+                            <p class="role"></p>
+                        </div>
+                    </div>
+
+                    <div class="section_content-menu">
+                        <div class="section_content-menu-header">
+                            <div class="section_content-details-title_menu-first" id="section_content-details-title_menu-first-highlight">
+                                <a href="">
+                                    <p>General</p>
+                                </a>
+                           </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="section_content-details-number">
+                    <p id="number"></p>
+                </div>
+            </div>
+
+            <div class="section_content-details-cards">
+                <div class="section_content-details-card" id="section_content-details-card_first">
+                    <div class="section_content-details-card_title">
+                        <div></div>
+                        <p>Personal Information</p>
+                    </div>
+                    <div class="section_content-details-card-content-group">
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Full Name</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p class="name"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Department</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="department"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Position</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="position"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Email</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="email"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Phone</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="phone"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_content-details-card" id="section_content-details-card_second">
+                    <div class="section_content-details-card_title">
+                        <p>Permissions</p>
+                    </div>
+                    <div class="section_content-details-card-content-group">
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Role</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p class="role"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Level</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="level"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Created</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="created"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Signed in</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="signedin"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="section_content-pages">
+                    <div class="section_content-pages-arrow_left">
+                        <img src="../../../assets/Charging_Station/arrow.png" id="previousID" alt="">
+                    </div>
+                    <div class="section_content-pages-arrow_right">
+                        <img src="../../../assets/Charging_Station/arrow.png" id="nextID" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    <script src="../../6.Setting/Setting_Third/Setting_Third-Mysql.js"></script>
+    <script src="../../6.Setting/Setting_Third/Setting_Third.js"></script>
+    <script src="../../../components/Assistant/Assistant_left.js"></script>
+    <script src="../../../components/Assistant/Assistant_right-Setting.js"></script>
+    <script src="../../../components/Menu/Menu.js"></script>
+    <script src="/components/Animation/Overview-Animation.js"></script>
+    <script src="/components/Animation/Setting-Animation.js"></script>
+
+
+</body>
+</html>

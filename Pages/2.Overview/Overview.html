@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEA DATALIZE (Eco Charge Hub)</title>
+
+    <!---------------- Logo ---------------->
+    <link rel="shortcut icon" href="../../../assets/Overview/Logo/DATALIZE.png" type="image/x-icon">
+
+    <!---------------- CSS ---------------->
+    <link rel="stylesheet" href="Overview.css">
+    <link rel="stylesheet" href="Overview2.css">
+
+    <!---------------- Fonts ---------------->
+    
+    <!-- Urbanist | Poppins | inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!---------------- Chart ---------------->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+<body>
+    
+    <div class="main">
+
+        <header-menu></header-menu>
+
+        <div class="section_content">
+            <div class="section_content-category">
+                <!--
+                <div class="section_content-menu">
+                    <div class="section_content-menu-header">
+                        <div class="section_content-menu-header-EV" id="section_content-menu-header-EV-highlight">
+                            <a href="">
+                                <p>Electric Vehicle</p>
+                                <div></div>
+                            </a>
+                        </div>
+                        <div class="section_content-menu-header-EM" id="section_content-menu-header-EM-highlight">
+                            <a href="">
+                                <p>Electric Motorcycle</p>
+                                <div></div>
+                            </a>
+                        </div>
+                        <div class="section_content-menu-header-EGT" id="section_content-menu-header-EGT-highlight">
+                            <a href="">
+                                <p>Electric Garbage Truck</p>
+                                <div></div>
+                            </a>
+                        </div>
+                        <div class="section_content-menu-header-EB" id="section_content-menu-header-EB-highlight">
+                            <a href="">
+                                <p>Electric Bus</p>
+                                <div></div>
+                            </a>
+                        </div>
+                        <div class="section_content-menu-header-ES" id="section_content-menu-header-ES-highlight">
+                            <a href="">
+                                <p>Electric Scooter</p>
+                                <div></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            -->
+
+                <div class="section_content-details">
+                    <div class="section_content-details-text">
+                        <div class="section_content-details-text-EGT section_content-details-highlight_text">
+                            <p>Electric</p><br>
+                            <p>Garbage Truck</p>
+                        </div>
+                        <!--
+                        <div class="section_content-details-text-EV section_content-details-highlight_text">
+                            <p>Electric</p><br>
+                            <p id="typewriter"></p>
+                        </div>
+                        <div class="section_content-details-text-EM section_content-details-highlight_text">
+                            <p>Electric</p>
+                            <br>
+                            <p id="typewriter"></p>
+                        </div>
+                        <div class="section_content-details-text-EGT section_content-details-highlight_text">
+                            <p>Electric</p>
+                            <br>
+                            <p id="typewriter"></p>
+                        </div>
+                        <div class="section_content-details-text-EB section_content-details-highlight_text">
+                            <p>Electric</p>
+                            <br>
+                            <p id="typewriter"></p>
+                        </div>
+                        <div class="section_content-details-text-ES section_content-details-highlight_text">
+                            <p>Electric</p>
+                            <br>
+                            <p id="typewriter"></p>
+                        </div>
+                    -->
+                    </div>
+                    <div class="section_content-details-widget swiper-container">
+                        <div class="section_content-details-widget-group swiper-wrapper">
+                            <div class="section_content-details-widget-slide swiper-slide">
+                                <img src="/assets/Overview/News/News1.png" alt="">
+                            </div>
+                            <div class="section_content-details-widget-slide swiper-slide">
+                                <img src="/assets/Overview/News/News2.png" alt="">
+                            </div>
+                            <div class="section_content-details-widget-slide swiper-slide">
+                                <img src="/assets/Overview/News/News3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="section_content-details-widget-pages swiper-pagination">
+                       <div class="section_content-details-widget-pages_point" data-slide="0"></div>
+                        <div class="section_content-details-widget-pages_point" data-slide="1"></div>
+                        <div class="section_content-details-widget-pages_point" data-slide="2"></div>
+                    </div>
+
+
+                    <div class="section_content-details-datalize">
+                        <div class="section_content-details-datalize-video">
+                            <div class="section_content-details-datalize-background"></div>
+                            <video autoplay loop muted playsinline >
+                            <source src="../../../assets/Overview/Logo/DATALIZE.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section_content-background">
+                    <div class="section_content-background-EGT">
+                        <img src="../../../assets/Overview/Background/Electric_Garbage-truck.png" id="section_content-background-EGT"alt="" style="z-index: 6;">
+                    </div>
+                </div>
+
+                <assistant-left></assistant-left>
+        
+                
+            </div>
+        </div>
+
+
+        <div class="section_bottom">
+            <div class="section_bottom-content">
+                <div class="section_bottom-content-charging_status">
+                    <div class="section_bottom-content-charging_status-title">
+                        <a href="/Pages/3.Charging_Station/Charging_Station-First/Charging_Station-First.html">
+                            <p>Charging Stations</p>
+                        </a>
+                        <div class="section_bottom-content-charging_status-title_connector">
+                            <div class="section_bottom-content-charging_status-title_connector-icon" id="section_bottom-content-charging_status-title_connector1-icon-highlight">
+                                <img src="../../assets/Charging_Station/Connector/Connector_01-inactive.png" id="section_bottom-content-charging_status-title_connector1-icon" alt="">
+                            </div>
+                            <div class="section_bottom-content-charging_status-title_connector-icon" id="section_bottom-content-charging_status-title_connector2-icon-highlight">
+                                <img src="../../assets/Charging_Station/Connector/Connector_02-inactive.png" id="section_bottom-content-charging_status-title_connector2-icon" alt="">
+                            </div>
+                        </div>
+                        <div class="section_bottom-content-charging_status-info">
+                            <img src="/assets/Overview/Icons/Info.png" alt="" id="info">
+                            <p>All Station</p>
+                            <div class="section_bottom-content-charging_status-info_popup">
+                                <div class="section_bottom-content-charging_status-info_popup_content">
+                                    <div class="section_bottom-content-charging_status-info_popup_decoration_top"></div>
+                                    <div class="section_bottom-content-charging_status-info_popup_content-box">
+                                        <div class="section_bottom-content-charging_status-info_popup_content-box_color1"></div>
+                                        <p class="section_bottom-content-charging_status-info_popup_content-box_text1">Available</p>
+                                    </div>
+                                    <div class="section_bottom-content-charging_status-info_popup_content-box">
+                                        <div class="section_bottom-content-charging_status-info_popup_content-box_color2"></div>
+                                        <p class="section_bottom-content-charging_status-info_popup_content-box_text2">Charging</p>
+                                    </div>
+                                    <div class="section_bottom-content-charging_status-info_popup_content-box">
+                                        <div class="section_bottom-content-charging_status-info_popup_content-box_color3"></div>
+                                        <p class="section_bottom-content-charging_status-info_popup_content-box_text3">Finishing</p>
+                                    </div>
+                                    <div class="section_bottom-content-charging_status-info_popup_content-box">
+                                        <div class="section_bottom-content-charging_status-info_popup_content-box_color4"></div>
+                                        <p class="section_bottom-content-charging_status-info_popup_content-box_text4">Suspended</p>
+                                    </div>
+                                    <div class="section_bottom-content-charging_status-info_popup_content-box">
+                                        <div class="section_bottom-content-charging_status-info_popup_content-box_color5"></div>
+                                        <p class="section_bottom-content-charging_status-info_popup_content-box_text5">Undefined</p>
+                                    </div>
+                                    <div class="section_bottom-content-charging_status-info_popup_decoration_bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section_bottom-content-charging_status-details">
+                        <!--
+                        <div class="section_bottom-content-charging_status-details-station">
+                            <div class="section_bottom-content-charging_status-details-weather">
+                                <img src="../../assets/Overview/Charging_Station/Sunlight.png" alt="">
+                            </div>
+                            <div class="section_bottom-content-charging_status-details-name">
+                                <p>Nong Kheam</p>
+                            </div>
+                            <div class="section_bottom-content-charging_status-details-status">
+                                <div class="section_bottom-content-charging_status-details-status-charger">
+                                    <div class="section_bottom-content-charging_status-details-status-charger_connector1"></div>
+                                    <p>01</p>
+                                    <div class="section_bottom-content-charging_status-details-status-charger_connector2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+                    </div>
+        
+
+                    <div class="section_bottom-content-data-scroll scroll-charging_station">
+                        <div class="section_bottom-content-data-scroll_content scroll-content-charging_station"></div>
+                    </div>
+                </div>
+
+                <div class="section_bottom-content-data">
+                    <div class="section_bottom-content-data-title">
+                        <a href="/Pages/4.Data_Analysis/Data_Analysis-First/Data_Analysis-First.html">
+                            <p>Data Analysis</p>
+                        </a>
+                        <div class="section_bottom-content-data-category">
+                            <div class="section_bottom-content-data-category-icon" id="section_bottom-content-data-category-icon_energy-highlight">
+                                <img src="../../../assets/Overview/Data_Analysis/Energy-black.png" alt="">
+                            </div>
+                            <div class="section_bottom-content-data-category-icon" id="section_bottom-content-data-category-icon_financial-highlight">
+                                <img src="../../../assets/Overview/Data_Analysis/Financial-black.png" alt="">
+                            </div>
+                            <div class="section_bottom-content-data-category-icon" id="section_bottom-content-data-category-icon_green-highlight">
+                                <img src="../../../assets/Overview/Data_Analysis/Green-black.png" alt="">
+                            </div>
+                        </div>
+                        <p>All Station</p>
+                    </div>
+                    <div class="section_bottom-content-data-details">
+                        <div class="section_bottom-content-data-details-summary">
+                            <div class="section_bottom-content-data-details-summary_box" id="section_bottom-content-data-details-summary_box-one">
+                                <p id="nameSummarybox1">Total Energy</p>
+                                <br>
+                                <p id="valueSummarybox1">0</p>
+                            </div>
+                            <div class="section_bottom-content-data-details-summary_box" id="section_bottom-content-data-details-summary_box-two">
+                                <p id="nameSummarybox2">Number of Session</p>
+                                <br>
+                                <p id="valueSummarybox2">0</p>
+                            </div>
+                            <div class="section_bottom-content-data-details-summary_box" id="section_bottom-content-data-details-summary_box-three">
+                                <p id="nameSummarybox3">Charging Time</p>
+                                <br>
+                                <p id="valueSummarybox3">0</p>
+                            </div>
+                            <div class="section_bottom-content-data-details-summary_box" id="section_bottom-content-data-details-summary_box-four">
+                                <p id="nameSummarybox4">No data Available</p>
+                                <br>
+                                <p id="valueSummarybox4">0</p>
+                            </div> 
+                        </div>
+                        <div class="section_bottom-content-data-details-chart">
+                            <div class="section_bottom-content-data-details-chart-title">
+                                <div class="section_bottom-content-data-details-chart-title_dropdown">
+                                    <p id="titleChart"></p>
+                                    <div>
+                                        <img src="../../../assets/Overview/Data_Analysis/arrow_down.png" alt="" id="arrowDropdown_bar">
+                                    </div>
+                                </div>
+                                <div class="section_bottom-content-data-details-chart-title_value">
+                                    <div class="section_bottom-content-data-details-chart-title_value_max">
+                                        <p id="bar_max">00</p>
+                                        <p>MAX</p>
+                                    </div>
+                                    <div class="section_bottom-content-data-details-chart-title_value_avg">
+                                        <p id="bar_avg">00</p>
+                                        <p>AVG</p>
+                                    </div>
+                                    <div class="section_bottom-content-data-details-chart-title_value_min">
+                                        <p id="bar_min">00</p>
+                                        <p>MIN</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section_bottom-content-data-details-chart-bar">
+                                <canvas id="myBarChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section_bottom-content-data-bullet">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="section_bottom-content-data-details-chart-dropdown" id="dropdownMenu_bar">
+                        <div class="section_bottom-content-data-details-chart-dropdown_options" id="ListOptions_bar">
+                            <!-- ตัวเลือกจะถูกสร้างขึ้นโดย JavaScript ที่นี่ -->
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                <div class="section_bottom-content-maintenance">
+                    <div class="section_bottom-content-maintenance-title">
+                        <a href="/Pages/5.Maintenance/Maintenance_First/Maintenance_First.html">
+                            <p>Maintenance</p>
+                        </a>
+                        <div class="section_bottom-content-maintenance-title_connector">
+                            <div class="section_bottom-content-maintenance-title_connector-icon" id="section_bottom-content-maintenance-title_connector1-icon-highlight">
+                                <img src="../../assets/Charging_Station/Connector/Connector_01-inactive.png" id="section_bottom-content-maintenance-title_connector1-icon" alt="">
+                            </div>
+                            <div class="section_bottom-content-maintenance-title_connector-icon" id="section_bottom-content-maintenance-title_connector2-icon-highlight">
+                                <img src="../../assets/Charging_Station/Connector/Connector_02-inactive.png" id="section_bottom-content-maintenance-title_connector2-icon" alt="">
+                            </div>
+                        </div>
+                        <p>All Station</p>
+                    </div>
+                    <div class="section_bottom-content-maintenance-details">
+                    </div>
+                    <div class="section_bottom-content-data-scroll scroll-maintenance">
+                        <div class="section_bottom-content-data-scroll_content scroll-content_maintenance"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        -->
+
+        </div>
+        <div class="section_bottom-menu-help">
+            <a href="/assets/Overview/Help/คู่มือการใช้งาน.pdf" download="คู่มือการใช้งาน">
+                <img src="/assets/Overview/Icons/Help.png" alt="">
+                <p>Help</p>
+            </a>
+        </div>
+    </div>
+
+
+
+    <script src="/Pages/2.Overview/Overview.js"></script>
+    <script src="/Pages/2.Overview/Overview-Mysql.js"></script>
+    <script src="../../components/Assistant/Assistant_left.js"></script>
+    <script src="../../../components/Menu/Menu.js"></script>
+    <script src="../../components/Animation/Overview-Animation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
+
+</body>
+</html>

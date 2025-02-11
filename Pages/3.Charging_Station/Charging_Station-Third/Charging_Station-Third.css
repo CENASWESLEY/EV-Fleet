@@ -1,0 +1,986 @@
+/*==================== VARIABLES CSS ====================*/
+:root {
+ 
+  
+    /*========== Colors ==========*/
+  
+    /* HSL color mode */
+  
+    --bg-main-color-white: #ffffff;
+    --bg-main-color-orange: #F37021;
+    --bg-submain-color-green: #33F321;
+    --bg-submain-color-orange: #F37021;
+    --bg-submain-color-red: #F32121;
+  
+    --body-color: #ffffff;
+    --text-white: #ffffff;
+    --text-orange: #F37021;
+    --text-black: #000000;
+  
+    --icon-color-black: #000000;
+    --icon-color-white: #ffffff;
+  
+    --box-shadow-black: #EAEAEA;
+    --box-shadow-black2: #E1E1E1;
+
+    --scroll-bar-color: #F37021;
+    --scroll-barhover-color: #FFCCAD;
+    --scroll-thumb-color: #ffffff;
+  
+ /*========== Font and typography ==========*/
+ --body-font: 'Urbanist', sans-serif;
+  
+ /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+ --big-font-size: 2rem;
+
+ --h1-font-size: 1.25rem;
+ --h2-font-size: 0.75rem;
+ --h3-font-size: 0.625rem;
+ --h4-font-size: 0.5rem;
+ --h5-font-size: 0.3125rem;
+
+
+ /*========== Font weight ==========*/
+
+ --font-regular: 400;
+ --font-medium: 500;
+ --font-semibold: 600;
+ --font-bold: 700;
+
+ /*========== z index ==========*/
+ --z-basic: 10;
+ --z-immediate: 100;
+ --z-hard: 1000;
+ --z-heavy: 10000;
+
+ --transition: all 400ms ease;
+  }
+  
+  /*========== Variables Dark theme ==========*/
+  body.dark {
+
+    --body-color: #000000;
+    --text-white: #000000;
+    --text-orange: #F37021;
+    --text-black: #ffffff;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  
+body {
+
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-menu-color);
+    overflow: hidden;
+
+  }
+  
+  h1 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+    font-size: var(--big-font-size);
+  }
+  
+  h2 {
+    color: var(--text-subtitle-color);
+    font-weight: var(--font-medium);
+    font-size: var(--h2-font-size);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  button {
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  .head{
+    font-size: 3rem;
+    font-weight: var(--font-bold);
+    text-align: center;
+  }
+  
+  .title {
+    color: var(--text-title-color);
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-bold);
+  }
+
+  /*========== SCROLL BAR ==========*/
+
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background: var(--scroll-thumb-color);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    width: 0.6rem;
+    background: var(--scroll-bar-color);
+    border-radius: 0.5rem;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-barhover-color);
+  }
+  
+  /*==========  section_content ========== */
+
+  .section_content{
+    position: relative;
+    width: 1600px;
+    height: 800px;
+    border-radius: 50px;
+    box-shadow: 0 0px 20px var(--box-shadow-black);
+    margin: 0 auto;
+  }
+
+    /*========== section_content-center ==========*/
+
+    .section_content-center-second{
+
+        
+    }
+
+    
+    .section_content-top-details-banner_station_transactionid {
+      text-align: center;
+    }
+    .section_content-top-details-banner_station_transactionid p:nth-child(1){
+      font-size: var(--h2-font-size);
+      color: var(--text-white);
+    }
+    .section_content-top-details-banner_station_transactionid p:nth-child(3){
+      font-size: var(--h1-font-size);
+      font-size: 16px;
+      color: var(--text-orange);
+      text-shadow: 0 0 5px var(--bg-main-color-orange);
+      font-weight: 800;
+    }
+
+    .section_content-center-transactions{
+        
+        position: absolute;
+        width: 1450px;
+        height: 320px;
+        border-radius: 30px;
+        box-shadow: 0 0 10px var(--box-shadow-black);
+        background: var(--bg-main-color-white);
+        justify-content: center;
+        top: 180px;
+        left: 80px;
+    }
+
+    .section_content-center-transactions_title{
+
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-items: center;
+      text-align: center;
+      justify-content: space-between;
+      margin: 1.5rem 3rem;
+      cursor: default;
+
+  }
+  .section_content-center-transactions_title_name{
+
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+      gap: 0.5rem;
+  }
+  
+  .section_content-center-transactions_title p{
+
+      color: var(--text-orange);
+      font-weight: 600;
+
+  }
+
+  .section_content-center-transactions_title_id{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius:10px;
+    background: var(--bg-main-color-white);
+    box-shadow: inset 0 0 10px var(--box-shadow-black);
+  }
+
+
+  .section_content-center-transactions_title_id p{
+
+    color: var(--text-orange);
+    font-weight: 600;
+  }
+
+  .section_content-center-transactions_title_arrow_dropdown img{
+
+    width: 15px;
+    height: 15px;
+
+  }
+
+  .section_content-center-transactions_title_dropdown{
+
+    position: absolute;
+    top: 4rem;
+    left: 12.5rem;
+    width: 70px;
+    height: 165px;
+    background: var(--bg-main-color-white);
+    box-shadow: 0 0 10px var(--box-shadow-black);
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    gap: 1rem;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 1rem 0;
+  }
+
+  .section_content-center-transactions_title_dropdown::-webkit-scrollbar {
+
+    width: 0;
+  
+}
+
+  .active_id {
+    color: rgba(217, 217, 217, 1) !important;
+    transform: none !important;
+    cursor: default !important;
+  }
+
+  .section_content-center-transactions_title_dropdown div{
+
+    color: var(--text-black);
+    font-size: var(--h2-font-size);
+    font-weight: 400;
+    cursor: pointer;
+
+  }
+
+  .section_content-center-transactions_title_dropdown div:hover{
+
+
+    color: var(--text-orange);
+    transition:  0.3s ease, color 0.3s ease;
+    transform: scale(1.2);
+
+  }
+
+
+  .section_content-center-transactions_title img{
+
+      width: 15px;
+      height: 15px;
+      margin-right: 2.5rem;
+      cursor: pointer;
+  }
+
+  .section_content-center-search{
+
+    position: absolute;
+    display: none;
+    top: 1.5rem;
+    right: 3.7rem;
+    width: 200px;
+    height: 30px;
+    background: var(--bg-main-color-white);
+    box-shadow: inset 0 0 10px var(--box-shadow-black);
+    border-radius: 20px;
+    align-content: center;
+    align-items: center;
+
+  }
+  .section_content-center-search_box{
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    cursor: text;
+  }
+
+  .section_content-center-search_box img{
+
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+
+  .section_content-center-search input{
+
+    font-family: 'Urbanist', sans-serif;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: var(--h2-font-size);
+    color: var(--text-black);
+    margin-left: 1rem;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+      -webkit-text-fill-color: #000;
+  }
+
+  .message{
+
+    text-align: center;
+    font-size: var(--h2-font-size);
+  }
+
+
+    .section_content-center-transactions_head{
+
+        display: grid;
+        grid-template-columns: repeat(13, 1fr);
+        justify-content: space-around;
+        font-size: var(--h2-font-size);
+        font-weight: 600;
+        width: 1400px;
+        height: 50px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px var(--box-shadow-black);
+        margin: 0 auto 1rem auto;
+        align-items: center;
+    }
+
+    .section_content-center-transactions_details{
+
+      display: grid;
+      grid-template-columns: repeat(13, 1fr);
+      justify-content: space-around;
+      font-size: var(--h2-font-size);
+      margin: 0.5rem auto;
+      width: 1400px;
+      height: 30px;
+      align-items: center;
+      align-content: center;
+      cursor: pointer;
+  }
+  .section_content-center-transactions_details:hover{
+    
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--box-shadow-black);
+    transition:  0.3s ease, color 0.3s ease;
+}
+
+  .section_content-center-transactions_head p,
+  .section_content-center-transactions_details {
+      text-align: center;
+
+  }
+
+    .section_content-center-transactions_pages{
+        
+      position: absolute;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      justify-content: space-around;
+      padding: 0 3rem;
+      bottom: 0.5rem;
+      align-content: center;
+      align-items: center;
+      
+  }
+
+    .section_content-center-transactions_pages_text{
+
+        font-size: var(--h2-font-size);
+        cursor: default;
+    }
+
+    .section_content-center-transactions_pages_number{
+
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .section_content-center-transactions_pages_number-arrow_left img{
+
+      cursor: pointer;
+    }
+    .section_content-center-transactions_pages_number-arrow_right img{
+
+      cursor: pointer;
+    }
+    
+
+    .section_content-center-transactions_pages_number img{
+
+        width: 15px;
+        height: 15px;
+        
+    }
+
+    .section_content-center-transactions_pages_number_group{
+
+      display: flex;
+      overflow: hidden;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .section_content-center-transactions_pages_number_group_box{
+
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        box-shadow: 0 0 5px var(--box-shadow-black);
+        cursor: pointer;
+
+    }
+
+    .section_content-center-transactions_pages_number_group_box p{
+
+        font-size: var(--h2-font-size);
+
+    }
+
+    .active_page{
+
+        background: var(--bg-main-color-orange);
+        
+
+    }
+
+    .active_page p{
+
+      color: var(--text-white);
+      font-weight: 600;
+      
+
+    }
+
+
+
+    /* Section_bottom */
+
+    .section_content-bottom{
+
+        position: absolute;
+        left: 80px;
+        bottom: 25px;
+        
+    }
+
+    .section_content-bottom-data{
+        
+        height: 250px;
+        overflow: hidden;
+        overflow-y: auto;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 460px 460px 460px;
+        gap: 2rem;
+        
+    }
+
+    .section_content-bottom-data-chart{
+
+            width: 460px;
+            height: 250px;
+            border-radius: 30px;
+            box-shadow: 0 0 10px var(--box-shadow-black);
+            background: var(--bg-main-color-white);
+
+    }
+
+
+    .section_content-bottom-data-chart{
+
+
+    }
+
+    .section_content-bottom-data-chart_line-title{
+
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2rem 0 2rem;
+    }
+
+    .section_content-bottom-data-chart_line-title p{
+
+      font-size: var(--h2-font-size);
+      font-weight: 600;
+      color: var(--text-orange);
+      cursor: default;
+    }
+
+    .section_content-bottom-data-chart_line-title_calendar{
+
+      width: 380px;
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem auto;
+    }
+    .section_content-bottom-data-chart_line-title_calendar_now{
+      margin: 0 auto;
+    }
+
+    .section_content-bottom-data-chart_line-title_calendar_now p{
+      text-align: center;
+    }
+
+    .section_content-bottom-data-chart_line-title-calendar_month{
+      
+      width: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section_content-bottom-data-chart_line-title-calendar_month_selected p{
+      cursor: default;
+    }
+
+    .section_content-bottom-data-chart_line-title-calendar_month img{
+
+      width: 10px;
+      height: 8px;
+      cursor: pointer;
+    }
+
+    .section_content-bottom-data-chart_line-title-calendar_month img:nth-child(1){
+
+      rotate: 90deg;
+    }
+    .section_content-bottom-data-chart_line-title-calendar_month img:nth-child(3){
+
+      rotate: 270deg;
+    }
+    .section_content-bottom-data-chart_line-title_calendar p{
+      font-size: var(--h3-font-size);
+      font-style: normal !important;
+    }
+    .section_content-bottom-data-chart_line-title_week_option{
+
+      display: flex;
+      gap: 0.5rem;
+      margin-right: 2rem;
+    }
+    .section_content-bottom-data-chart_line-title_week_option P{
+
+      
+      cursor: pointer;
+    }
+        
+    .section_content-bottom-data-chart_line-title_week_option P:hover{
+      transition:  0.3s ease, color 0.3s ease;
+      color: var(--text-orange);
+
+    }
+    .active_weekly{
+      color: var(--text-orange);
+    }
+
+    .section_content-bottom-data-chart_line-dropdown{
+
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+    .section_content-bottom-data-chart_line-dropdown img{
+
+      width: 10px;
+      height: 10px;
+    }
+
+    .section_content-bottom-data-chart_line-contain{
+
+      justify-content: center;
+      margin: 1rem auto 1rem auto;
+      width:400px ;
+      height: 150px;
+    }
+    .section_content-bottom-data-chart_dailyline-contain{
+
+      height: 180px !important;
+    }
+    /* ตัวอย่าง CSS เพื่อบังคับให้ตัวอักษรไม่เอียง */
+    .chartjs-render-monitor .chartjs-scale-x .chartjs-tick {
+      font-style: normal !important;
+    }
+    .section_content-bottom-data-chart_heat{
+      
+      position: relative;
+      width: 460px;
+      height: 250px;
+    }
+    .section_content-bottom-data-chart_heat-title{
+
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2rem 0 2rem;
+    }
+    .section_content-bottom-data-chart_heat-title p{
+      font-size: var(--h2-font-size);
+      font-weight: 600;
+      color: var(--text-orange);
+      cursor: default;
+    }
+
+    .section_content-bottom-data-chart_line-title-calendar_month{
+      
+      width: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section_content-bottom-data-chart_line-title-calendar_month_selected p{
+      cursor: default;
+    }
+
+    .section_content-bottom-data-chart_line-title-calendar_month img{
+
+      width: 10px;
+      height: 8px;
+      cursor: pointer;
+    }
+
+    .section_content-bottom-data-chart_line-title-calendar_month img:nth-child(1){
+
+      rotate: 90deg;
+    }
+    .section_content-bottom-data-chart_line-title-calendar_month img:nth-child(3){
+
+      rotate: 270deg;
+    }
+
+
+    .section_content-bottom-data-chart_heat-dropdown{
+
+      
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+    .section_content-bottom-data-chart_heat-dropdown img{
+
+      
+      width: 10px;
+      height: 10px;
+    }
+
+    .section_content-bottom-data-chart_heat-title-calendar{
+      
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 3rem 1rem 3rem;
+    }
+
+    
+    .section_content-bottom-data-chart_heat-title-calendar p{
+
+      font-size: var(--h3-font-size);
+      
+    }
+
+    .section_content-bottom-data-chart_heat-title-calendar{
+      
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 3rem 1rem 3rem;
+    }
+
+    
+    .section_content-bottom-data-chart_heat-title-calendar p{
+
+      font-size: var(--h3-font-size);
+      
+    }
+    .section_content-bottom-data-chart_heat-title-calendar_month{
+      
+      width: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section_content-bottom-data-chart_heat-title-calendar_month_selected{
+      cursor: default;
+    }
+
+    .section_content-bottom-data-chart_heat-title-calendar_month img{
+
+      width: 10px;
+      height: 8px;
+      cursor: pointer;
+    }
+
+    .section_content-bottom-data-chart_heat-title-calendar_month img:nth-child(1){
+
+      rotate: 90deg;
+    }
+    .section_content-bottom-data-chart_heat-title-calendar_month img:nth-child(3){
+
+      rotate: 270deg;
+    }
+
+    .section_content-bottom-data-chart_heat-contain{
+
+      justify-content: center;
+    }
+
+
+    .section_content-bottom-data-chart_heat-contain_box_label{
+      
+
+      position: absolute;
+      display: flex;
+      justify-content: space-evenly;
+      right: 5rem;
+      bottom: 1.5rem;
+      width: 300px;
+    }
+    
+    .section_content-bottom-data-chart_heat-contain_box{
+
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      align-content: center;
+    }
+
+    .section_content-bottom-data-chart_heat-contain_box p{
+
+      font-size: var(--h3-font-size);
+    }
+
+    .section_content-bottom-data-chart_heat-contain_box_high{
+
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      background: #F37021;
+    }
+    .section_content-bottom-data-chart_heat-contain_box_medium{
+
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      background: #F4A06D;
+    }
+    .section_content-bottom-data-chart_heat-contain_box_low{
+
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      background: #FFDECA;
+    }
+
+    .section_content-bottom-data-chart_heat-contain{
+
+    }
+
+    .section_content-bottom-data-chart_heat-contain-tooltip{
+
+      position: absolute;
+      width: max-content;
+      padding: 0 0.5rem;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      align-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 3px;
+      font-size: var(--h2-font-size);
+      pointer-events: none;
+      z-index: 10;
+      border-radius: 10px;
+      transition:  0.3s ease, color 0.3s ease;
+      visibility: hidden;
+    }
+
+    .section_bootom-data-chart_bar{
+
+
+    }
+
+    .section_content-bottom-data-chart_bar-title{
+
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+    }
+
+    .section_content-bottom-data-chart_bar-title p {
+
+        font-size: var(--h2-font-size);
+        font-weight: 600;
+        color: var(--text-orange);
+        cursor: default;
+    }
+    .section_content-bottom-data-chart_bar-dropdown{
+
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+    }
+
+    .section_content-bottom-data-chart_bar{
+
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .section_content-bottom-data-chart_bar-dropdown img{
+
+        width: 10px;
+        height: 10px;
+    }
+
+    .section_content-bottom-data-chart-bar-contain{
+
+        margin-top: 1rem;
+        height: 180px;
+        width: 420px;
+    }
+
+    .section_content-bottom_data-dropdown{
+
+        
+
+    }
+    .section_content-bottom_data-dropdown_box_daily,.section_content-bottom_data-dropdown_box_weekly,.section_content-bottom_data-dropdown_box_monthly,.section_content-bottom_data-dropdown_box_yearly{
+      
+      position: absolute;
+      width: 120px;
+      height: 100px;
+      background: var(--bg-main-color-white);
+      border-radius: 20px;
+      box-shadow: 0 0 10px var(--box-shadow-black);
+      justify-content: center;
+      justify-items: center;
+      text-align: center;
+      align-content: center;
+      align-items: center;
+      overflow: hidden;
+      overflow-y: scroll;
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .section_content-bottom_data-dropdown_box_daily{
+      
+      position: absolute;
+      top: 3rem;
+      left: 19rem;
+    }
+    .section_content-bottom_data-dropdown_box_weekly{
+      
+      position: absolute;
+      top: 3rem;
+      left: 50rem;
+    }
+    .section_content-bottom_data-dropdown_box_monthly{
+      
+      position: absolute;
+      top: 3rem;
+      right: 2rem;
+    }
+    .section_content-bottom_data-dropdown_box_yearly{
+      
+      position: absolute;
+      top: 3rem;
+      left: 19rem;
+    }
+    .section_content-bottom_data-dropdown_box_daily::-webkit-scrollbar,.section_content-bottom_data-dropdown_box_weekly::-webkit-scrollbar,.section_content-bottom_data-dropdown_box_monthly::-webkit-scrollbar,.section_content-bottom_data-dropdown_box_yearly::-webkit-scrollbar{
+
+      width: 0;
+    }
+
+    .section_content-bottom_data-dropdown_box_daily p,.section_content-bottom_data-dropdown_box_weekly p,.section_content-bottom_data-dropdown_box_monthly p,.section_content-bottom_data-dropdown_box_yearly p{
+
+      font-size: var(--h2-font-size);
+      cursor: pointer;
+    }
+    .section_content-bottom_data-dropdown_box_daily p:hover,.section_content-bottom_data-dropdown_box_weekly p:hover,.section_content-bottom_data-dropdown_box_monthly p:hover,.section_content-bottom_data-dropdown_box_yearly p:hover{
+
+      color: var(--text-orange);
+      transition:  0.3s ease, color 0.3s ease;
+      transform: scale(1.1);
+    }
+
+    .active_dropdown_chart {
+      color: rgba(217, 217, 217, 1) !important;
+      transform: none !important;
+      cursor: default !important;
+    }
+
+    .section_content-pages{
+
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      top: 50%;
+      padding: 0 2rem;
+      
+    }
+
+    .section_content-pages-arrow_left img{
+
+      width: 20px;
+      height: 20px;
+      transform: rotate(90deg);
+      cursor: pointer;
+    }
+    .section_content-pages-arrow_right img{
+
+      width: 20px;
+      height: 20px;
+      transform: rotate(270deg);
+      cursor: pointer;
+    }
+
+    

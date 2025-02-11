@@ -1,0 +1,1047 @@
+/*==================== VARIABLES CSS ====================*/
+:root {
+ 
+  
+    /*========== Colors ==========*/
+  
+    /* HSL color mode */
+  
+    --bg-main-color-white: #ffffff;
+    --bg-main-color-orange: #F37021;
+    --bg-submain-color-green: #33F321;
+    --bg-submain-color-orange: #F37021;
+    --bg-submain-color-red: #F32121;
+  
+    --body-color: #ffffff;
+    --text-white: #ffffff;
+    --text-orange: #F37021;
+    --text-black: #000000;
+  
+    --icon-color-black: #000000;
+    --icon-color-white: #ffffff;
+  
+    --box-shadow-black: #EAEAEA;
+    --box-shadow-black2: #E1E1E1;
+
+    --scroll-bar-color: #F37021;
+    --scroll-barhover-color: #FFCCAD;
+    --scroll-thumb-color: #ffffff;
+  
+ /*========== Font and typography ==========*/
+ --body-font: 'Urbanist', sans-serif;
+  
+ /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+ --big-font-size: 2rem;
+
+ --h1-font-size: 1.25rem;
+ --h2-font-size: 0.75rem;
+ --h3-font-size: 0.625rem;
+ --h4-font-size: 0.5rem;
+ --h5-font-size: 0.3125rem;
+
+
+ /*========== Font weight ==========*/
+
+ --font-regular: 400;
+ --font-medium: 500;
+ --font-semibold: 600;
+ --font-bold: 700;
+
+ /*========== z index ==========*/
+ --z-basic: 10;
+ --z-immediate: 100;
+ --z-hard: 1000;
+ --z-heavy: 10000;
+
+ --transition: all 400ms ease;
+  }
+  
+  /*========== Variables Dark theme ==========*/
+  body.dark {
+
+    --body-color: #000000;
+    --text-white: #000000;
+    --text-orange: #F37021;
+    --text-black: #ffffff;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  
+body {
+
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-menu-color);
+    overflow: hidden;
+
+  }
+  
+  h1 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+    font-size: var(--big-font-size);
+  }
+  
+  h2 {
+    color: var(--text-subtitle-color);
+    font-weight: var(--font-medium);
+    font-size: var(--h2-font-size);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  button {
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  .head{
+    font-size: 3rem;
+    font-weight: var(--font-bold);
+    text-align: center;
+  }
+  
+  .title {
+    color: var(--text-title-color);
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-bold);
+  }
+
+  /*========== SCROLL BAR ==========*/
+
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background: var(--scroll-thumb-color);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    width: 0.6rem;
+    background: var(--scroll-bar-color);
+    border-radius: 0.5rem;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-barhover-color);
+  }
+  
+  /*==========  section_content ========== */
+  .section_content{
+    position: relative;
+    width: 1600px;
+    height: 800px;
+    border-radius: 50px;
+    box-shadow: 0 0px 20px var(--box-shadow-black);
+    margin: 0 auto;
+    
+  }
+  .section_content-top{
+
+  }
+
+  .section_content-top img{
+
+    position: absolute;
+    width: 100%;
+    height: 250px ;
+    border-radius: 50px;
+
+  }
+
+  .section_content-top-details{
+
+    position: absolute;
+    width: 1450px;
+    height: 120px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter:blur(20px) ;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    top: 40px;
+    left: 80px;
+    align-content: center;
+    align-items: center;
+    z-index: var(--z-basic);
+  }
+
+  .section_content-top-details-banner{
+
+
+    width: 1300px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5rem;
+    align-items: center;
+  }
+
+  .section_content-top-details-banner_calendar{
+
+    cursor: default;
+    font-size: var(--h2-font-size);
+    text-align: center;
+    color: var(--text-white);
+
+  }
+
+  .section_content-top-details-banner_calendar p:nth-child(3){
+
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-orange);
+    text-shadow: 0 0 5px var(--bg-main-color-orange);
+  }
+
+  .section_content-top-details-banner_station{
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: default;
+    text-align: center;
+  }
+
+  .section_content-top-details-banner_station p{
+
+    font-size: var(--h2-font-size);
+    color: var(--text-white);
+  }
+
+  .section_content-top-details-banner_station-name {
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .section_content-top-details-banner_station-name p{
+
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-orange);
+    font-weight: 600;
+  }
+
+  #allStation{
+    color: var(--text-orange);
+    text-shadow: 0 0 5px var(--bg-main-color-orange);
+    font-weight: 800;
+
+  }
+
+  #selectedStation{
+    
+    font-weight: 800;
+
+    color: var(--text-orange);
+    text-shadow: 0 0 5px var(--bg-main-color-orange);
+
+  }
+
+
+  .section_content-top-details-banner_station-name img{
+
+    width: 15px;
+    height: 15px;
+    margin-left: 9rem;
+    cursor: pointer;
+  }
+
+  .section_content-top-details-banner_station-name-dropdown{
+
+    position: absolute;
+    display: none;
+    width: 250px;
+    height: 230px;
+    border-radius: 20px;
+    background: var(--bg-main-color-white);
+    box-shadow: 0 0 5px var(--box-shadow-black);
+    margin-top: 1rem;
+    overflow: hidden;
+    overflow-y: scroll;
+    top: 20px;
+    
+  }
+
+  .section_content-top-details-banner_station-name-dropdown::-webkit-scrollbar {
+
+      width: 0;
+    
+  }
+
+  .section_content-top-details-banner_station-name-dropdown_options{
+
+    justify-content: center;
+    justify-items: center;
+    padding: 1.5rem 0;
+  }
+  .section_content-top-details-banner_station-name-dropdown_options_choose p{
+
+    color: var(--text-black);
+    font-size: var(--h2-font-size);
+    margin: 1rem;
+    cursor: pointer;
+  }
+  .section_content-top-details-banner_station-name-dropdown_options_choose p:hover{
+
+    color: var(--text-orange);
+    transition:  0.3s ease, color 0.3s ease;
+    transform: scale(1.2);
+
+
+  }
+
+  .section_content-top-details-banner_station-name-dropdown_options_choose p.active {
+    color: rgba(217, 217, 217, 1);
+    transform: none;
+    cursor: default;
+}
+
+  .section_content-top-details-banner_station-name-dropdown_options_choose_line{
+
+    width: 150px;
+    height: 1px;
+    background: rgba(234, 234, 234, 1);
+  }
+
+
+  .section_content-top-details-banner_category {
+
+    cursor: default;
+    display: flex;
+    column-gap: 0.2rem;
+    align-items: center;
+    
+}
+
+.section_content-top-details-banner_category-energy,
+.section_content-top-details-banner_category-financial,
+.section_content-top-details-banner_category-green {
+
+  
+    text-align: center;
+    font-size: var(--h2-font-size);
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center; 
+    color: var(--text-white);
+    width: max-content;
+}
+
+
+.section_content-top-details-banner_category-energy-icon,.section_content-top-details-banner_category-financial-icon,.section_content-top-details-banner_category-green-icon{
+
+  width: 50px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.section_content-top-details-banner_category-energy-icon img,.section_content-top-details-banner_category-financial-icon img,.section_content-top-details-banner_category-green-icon img{
+
+  
+    width: 40px;
+    height: 40px;
+    
+}
+
+
+.section_content-top-details-banner_category-energy_title,
+.section_content-top-details-banner_category-financial_title,
+.section_content-top-details-banner_category-green_title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+    width: auto;
+
+}
+
+.section_content-top-details-banner_category-energy_title p:nth-child(2),
+.section_content-top-details-banner_category-financial_title p:nth-child(2),
+.section_content-top-details-banner_category-green_title p:nth-child(2) {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-orange);
+    text-shadow: 0 0 5px var(--bg-main-color-orange);
+}
+
+
+
+/* Section_content-center */
+.section_content-center{
+
+
+}
+
+.section_content_center-chart{
+
+  position: absolute;
+  top: 180px;
+  left: 5rem;
+}
+
+.section_content_center-chart_pie-group{
+  
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px 200px;
+  gap: 1.78rem;
+  height: 260px;
+  cursor: default;
+  margin-bottom: 6rem;
+}
+
+.section_content_center-chart_pie{
+  position: relative;
+  width: 300px;
+  height: 330px;
+  border-radius: 30px;
+  background: var(--bg-main-color-white);
+  box-shadow: 0 0 10px var(--box-shadow-black);
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+
+}
+#myPieChart1,#myPieChart2,#myPieChart3,#myPieChart4{
+
+  z-index: 2;
+}
+.section_content_center-chart_pie-data-inner{
+
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: var(--bg-main-color-white);
+  box-shadow: inset 0 0 20px var(--box-shadow-black);
+  border-radius: 50%;
+  top: 5.55rem;
+  left: 6.55rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  z-index: 1;
+}
+.section_content_center-chart_pie-data-inner_money{
+  
+  display: grid;
+  gap: 0.5rem;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.section_content_center-chart_pie-data-inner_money img{
+
+
+  width: 30px;
+  height: 30px;
+}
+
+.section_content_center-chart_pie-data-inner_money p:nth-child(2){
+
+  
+  font-size: var(--h2-font-size) !important;
+  font-weight: bold !important;
+  color: black !important;
+  margin: 0 !important;
+}
+
+.section_content_center-chart_pie-data-inner_money p:nth-child(3){
+
+  
+  font-size: var(--h3-font-size) !important;
+  font-weight: 400 !important;
+  color: black !important;
+  margin: 0 !important;
+}
+
+
+.section_content_center-chart_pie p{
+
+  margin: 1.5rem 1rem 1rem 1rem;
+  font-size: var(--h2-font-size);
+  font-weight: 600;
+  color: var(--text-orange);
+}
+
+.section_content_center-chart_pie-data{
+  
+  width: 300px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  
+}
+
+.section_content_center-chart_pie-data_station{
+  
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  bottom:-22.1rem;
+  left: -6rem;
+  background: var(--bg-main-color-white);
+  box-shadow: inset 0 5px 10px var(--box-shadow-black);
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.section_content_center-chart_pie-data_station::-webkit-scrollbar {
+  
+  width: 0;
+}
+
+.section_content_center-chart_pie-data_station_name_group{
+
+  position: absolute;
+  top: 3rem;
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 70px;
+  width: 250px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.section_content_center-chart_pie-data_station_name_group::-webkit-scrollbar{
+
+  width: 0;
+}
+
+
+.section_content_center-chart_pie-data_station_name{
+  
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  gap: 0.25rem;
+  
+}
+
+
+.section_content_center-chart_pie-data_station_name p{
+  
+  margin: 0;
+  font-size: var(--h3-font-size);
+  font-weight: 400;
+  color: var(--text-black);
+  width: max-content;
+}
+
+.section_content_center-chart_pie-data_station_name p:nth-child(1){
+  
+
+  font-weight: 600;
+
+
+} 
+.section_content_center-chart_pie-data_station_name p:nth-child(2){
+  
+
+  font-weight: 400;
+
+}
+
+
+.section_content_center-chart_pie-title{
+
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.section_content_center-chart_pie-title p{
+
+  font-size: var(--h2-font-size);
+  font-weight: bold;
+}
+
+.section_content_center-chart_pie-title img{
+
+  width: 15px;
+  height: 9px;
+}
+
+
+.section_content_center-chart_selector{
+
+
+  display: grid;
+  margin-top: 3rem;
+  height: 250px;
+}
+
+.section_content_center-chart_selector-icon_data{
+  
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.section_content_center-chart_selector-icon_data-export{
+
+  display: flex;
+  gap: 0.5rem;
+
+}
+.section_content_center-chart_selector-icon_data-export{
+
+  font-size: var(--h3-font-size);
+  color: var(--text-white);
+  text-shadow: 0 0 5px black;
+}
+
+.section_content_center-chart_selector-icon_data-export img{
+
+  width: 15px;
+  height: 15px;
+}
+
+
+.section_content_center-chart_selector-icon_data-share{
+  display: flex;
+  gap: 0.5rem;
+
+}
+
+.section_content_center-chart_selector-icon_data-share p{
+  font-size: var(--h3-font-size);
+  color: var(--text-white);
+  text-shadow: 0 0 5px black;
+
+}
+
+
+.section_content_center-chart_selector-icon_data-share img{
+
+  width: 15px;
+  height: 15px;
+}
+
+.section_content_center-chart_selector-icon_data-category_all{
+
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+
+}
+
+.section_content_center-chart_selector-icon_data-category_year,.section_content_center-chart_selector-icon_data-category_period ,.section_content_center-chart_selector-icon_data-category_icon{
+
+  width: 205px;
+  height: 70px;
+  box-shadow: inset 5px 0 10px var(--box-shadow-black);
+  border-radius: 20px 0 0 20px;
+  background: var(--bg-main-color-white);
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.section_content_center-chart_selector-icon_data-category_year_title,.section_content_center-chart_selector-icon_data-category_period_title ,.section_content_center-chart_selector-icon_data-category_icon_title{
+
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  margin-bottom: 0.5rem;
+
+}
+.section_content_center-chart_selector-icon_data-category_year_title p,.section_content_center-chart_selector-icon_data-category_period_title p ,.section_content_center-chart_selector-icon_data-category_icon_title p{
+
+  font-size: var(--h3-font-size);
+  font-weight: 800;
+  cursor:default;
+  color: var(--text-orange);
+
+}
+
+.section_content_center-chart_selector-icon_data-category_year_title img,.section_content_center-chart_selector-icon_data-category_period_title img,.section_content_center-chart_selector-icon_data-category_icon_title img{
+
+  width: 10px;
+  height: 10px;
+  transform: rotate(270deg);
+  cursor: pointer;
+
+}
+
+.section_content_center-chart_selector-icon_data-category_year_group_box,.section_content_center-chart_selector-icon_data-category-period_group_box,.section_content_center-chart_selector-icon_data-category_icon_group_box{
+
+  display: flex;
+  gap: 0.5rem;
+}
+.section_content_center-chart_selector-icon_data-category_year_box,.section_content_center-chart_selector-icon_data-category-period_box,.section_content_center-chart_selector-icon_data-category_icon_box{
+
+  width: 50px;
+  height: 20px;
+  background: var(--bg-main-color-white);
+  border-radius: 20px;
+  box-shadow: 0 0 5px var(--box-shadow-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition:  0.3s ease, color 0.3s ease;
+
+
+}
+
+.section_content_center-chart_selector-icon_data-category_station{
+
+  width: 205px;
+  height: 250px;
+  box-shadow: inset 5px 0 10px var(--box-shadow-black);
+  border-radius: 20px 0 0 20px;
+  background: var(--bg-main-color-white);
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.section_content_center-chart_selector-icon_data-category_station_group_box{
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.section_content_center-chart_selector-icon_data-category_station_box{
+
+    width: 50px;
+    height: 40px;
+    background: var(--bg-main-color-white);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--box-shadow-black);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition:  0.3s ease, color 0.3s ease;
+}
+
+.section_content_center-chart_selector-icon_data-category_station_box:nth-child(1){
+
+
+  background: #790306;
+
+}
+
+
+.section_content_center-chart_selector-icon_data-category_station_box p{
+
+  font-size: var(--h3-font-size);
+  color: var(--text-white);
+}
+
+.section_content_center-chart_selector-icon_data-category_year_box p{
+
+  font-size: var(--h3-font-size);
+}
+
+.section_content_center-chart_selector-icon_data-category-period_box p{
+  font-size: var(--h3-font-size);
+}
+
+
+.section_content_center-chart_selector-icon_data-category_icon_box img{
+
+  width: 13px;
+  height: 13px;
+ 
+}
+
+.active_selector{
+
+  background: var(--bg-main-color-orange);
+  color: var(--text-white);
+  font-weight: bold;
+  
+}
+
+.section_content_center-chart_yearly{
+  display: flex;
+
+  column-gap: 1.8rem;
+}
+
+.section_content_center-chart_yearly_bar{
+
+  width: 700px;
+  height: 240px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px var(--box-shadow-black);
+  background: var(--bg-main-color-white);
+}
+
+
+.section_content_center-chart_yearly_bar_title-dropdown{
+
+  position: absolute;
+  display: none;
+  width: 200px;
+  height: 180px;
+  border-radius: 20px;
+  background: var(--bg-main-color-white);
+  box-shadow: 0 0 5px var(--box-shadow-black);
+  margin-top: 1rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  bottom: 0.5rem;
+  left: 2rem;
+  
+}
+
+.section_content_center-chart_yearly_bar_title-dropdown::-webkit-scrollbar {
+
+    width: 0;
+  
+}
+
+.section_content_center-chart_yearly_bar_title-dropdown_options{
+
+  justify-content: center;
+  justify-items: center;
+  padding: 1.5rem 0;
+}
+.section_content_center-chart_yearly_bar_title-dropdown_options_choose p{
+
+  color: var(--text-black);
+  font-size: var(--h2-font-size);
+  margin: 1rem;
+  cursor: pointer;
+}
+.section_content_center-chart_yearly_bar_title-dropdown_options_choose p:hover{
+
+  color: var(--text-orange);
+  transition:  0.3s ease, color 0.3s ease;
+  transform: scale(1.2);
+
+
+}
+
+.section_content_center-chart_yearly_bar_title-dropdown_options_choose p.active_dropdown {
+  color: rgba(217, 217, 217, 1);
+  transform: none;
+  cursor: default;
+}
+
+.section_content_center-chart_yearly_bar_title-dropdown_options_choose_line{
+
+  width: 150px;
+  height: 1px;
+  background: rgba(234, 234, 234, 1);
+}
+
+
+.section_content_center-chart_yearly_line{
+
+  width: 700px;
+  height: 240px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px var(--box-shadow-black);
+  background: var(--bg-main-color-white);
+}
+
+.section_content_center-chart_yearly_bar_title,.section_content_center-chart_yearly_line_title{
+
+  display: flex;
+  margin: 1.5rem 2rem 1rem 2rem;
+
+}
+
+.section_content_center-chart_yearly_bar_title,.section_content_center-chart_yearly_line_title{
+
+  font-size: var(--h2-font-size);
+  font-weight: 600;
+  color: var(--text-orange);
+  align-items: center;
+  align-content: center;
+  column-gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.section_content_center-chart_yearly_bar_title_text, .section_content_center-chart_yearly_line_title_text{
+
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  cursor: default;
+}
+
+.section_content_center-chart_yearly_bar_title img,.section_content_center-chart_yearly_line_title img{
+
+  width: 15px;
+  height: 9px;
+  cursor: pointer;
+}
+
+.section_content_center-chart_yearly_bar_value,.section_content_center-chart_yearly_line_value{
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: default;
+}
+.section_content_center-chart_yearly_bar_value_max,.section_content_center-chart_yearly_bar_value_avg,.section_content_center-chart_yearly_bar_value_min,
+.section_content_center-chart_yearly_line_value_max,.section_content_center-chart_yearly_line_value_avg,.section_content_center-chart_yearly_line_value_min
+{
+
+  display: flex;
+  align-items: end;
+  gap: 0.25rem;
+}
+
+.section_content_center-chart_yearly_bar_value_max p:nth-child(1) ,.section_content_center-chart_yearly_bar_value_avg p:nth-child(1),.section_content_center-chart_yearly_bar_value_min p:nth-child(1),
+.section_content_center-chart_yearly_line_value_min p:nth-child(1) ,.section_content_center-chart_yearly_line_value_min p:nth-child(1),.section_content_center-chart_yearly_line_value_min p:nth-child(1)
+
+{
+
+  display: flex;
+  font-size: var(--h2-font-size);  
+  font-weight: bold;
+}
+.section_content_center-chart_yearly_bar_value_max p:nth-child(2) ,.section_content_center-chart_yearly_bar_value_avg p:nth-child(2),.section_content_center-chart_yearly_bar_value_min p:nth-child(2),
+  .section_content_center-chart_yearly_line_value_max p:nth-child(2) ,.section_content_center-chart_yearly_line_value_avg p:nth-child(2),.section_content_center-chart_yearly_line_value_min p:nth-child(2){
+
+  display: flex;
+  font-size: var(--h3-font-size);
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.section_content_center-chart_yearly_bar_value img{
+
+  width: 15px;
+  height: 15px;
+}
+
+.section_content_center-chart_yearly_line_value img{
+
+  width: 15px;
+  height: 12px;
+}
+
+.section_content_center-chart_yearly_bar_contain{
+
+  width: 630px;
+  height: 170px;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+.section_content_center-chart_yearly_line_contain{
+
+  width: 630px;
+  height: 170px;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+
+
+.section_content_center-chart_yearly_line_title-dropdown{
+
+  position: absolute;
+  display: none;
+  width: 200px;
+  height: 180px;
+  border-radius: 20px;
+  background: var(--bg-main-color-white);
+  box-shadow: 0 0 5px var(--box-shadow-black);
+  margin-top: 1rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  bottom: 10px;
+  right: 520px;
+  
+}
+
+.section_content_center-chart_yearly_line_title-dropdown::-webkit-scrollbar {
+
+    width: 0;
+  
+}
+
+.section_content_center-chart_yearly_line_title-dropdown_options{
+
+  justify-content: center;
+  justify-items: center;
+  padding: 1.5rem 0;
+}
+.section_content_center-chart_yearly_line_title-dropdown_options_choose p{
+
+  color: var(--text-black);
+  font-size: var(--h2-font-size);
+  margin: 1rem;
+  cursor: pointer;
+}
+.section_content_center-chart_yearly_line_title-dropdown_options_choose p:hover{
+
+  color: var(--text-orange);
+  transition:  0.3s ease, color 0.3s ease;
+  transform: scale(1.2);
+
+
+}
+
+.section_content_center-chart_yearly_line_title-dropdown_options_choose p.active_dropdown {
+  color: rgba(217, 217, 217, 1);
+  transform: none;
+  cursor: default;
+}
+
+.section_content_center-chart_yearly_line_title-dropdown_options_choose_line{
+
+  width: 150px;
+  height: 1px;
+  background: rgba(234, 234, 234, 1);
+}

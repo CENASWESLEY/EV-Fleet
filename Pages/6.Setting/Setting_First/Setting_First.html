@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEA DATALIZE (Setting)</title>
+
+    <!---------------- Logo ---------------->
+    <link rel="shortcut icon" href="../../../assets/Overview/Logo/DATALIZE.png" type="image/x-icon">
+
+    <!---------------- CSS ---------------->
+    <link rel="stylesheet" href="../../2.Overview/Overview.css">
+    <link rel="stylesheet" href="../../6.Setting/Setting_First/Setting_First.css">
+
+
+    <!---------------- Fonts ---------------->
+    
+    <!-- Urbanist | Poppins | inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+<body>
+
+    <div class="main">
+
+        <header-menu></header-menu>
+
+        <assistant-left></assistant-left>
+        <assistant-right-s></assistant-right-s>
+        
+        <div class="section_content">
+            <div class="section_content-details">
+                <div class="section_content-details-title">
+                    <div class="section_content-details-title_bg">
+                        <img src="../../../assets/Setting/BG2.png" alt="">
+                    </div>
+                    <div class="section_content-details-title_user">
+                        <img src="/assets/Setting/Avatar/Default_Avatar.jpg" alt="" id="profileOriginal">
+                        <div class="section_content-details-title_user_text">
+                            <p class="name"></p>
+                            <p class="role"></p>
+                        </div>
+                    </div>
+
+                    <div class="section_content-menu">
+                        <div class="section_content-menu-header">
+                            <div class="section_content-details-title_menu-first" id="section_content-details-title_menu-first-highlight">
+                                <a href="">
+                                    <p>General</p>
+                                </a>
+                           </div>
+                           <div class="section_content-details-title_menu-second" id="section_content-details-title_menu-second-highlight">
+                                <a href="">
+                                    <p>Customization</p>
+                                </a>
+                           </div>
+                           <div class="section_content-details-title_menu-third" id="section_content-details-title_menu-third-highlight">
+                               <a href="">
+                                <p>Security</p>
+                               </a>
+                           </div>
+                           <div class="section_content-details-title_menu-fourth" id="section_content-details-title_menu-fourth-highlight">
+                               <a href="">
+                                    <p>Notifications</p>
+                                </a>
+                           </div>
+                           <div class="section_content-details-title_menu-fifth" id="section_content-details-title_menu-fifth-highlight">
+                               <a href="">
+                                <p>Reports</p>
+                               </a>
+                           </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="section_content-details-icons">
+                    <div class="section_content-details-icons_setting" id="">
+                        <img src="../../../assets/Setting/Icons/Setting.png" alt="">
+                    </div>
+                    <div class="section_content-details-icons_logout" id="logout">
+                        <img src="../../../assets/Setting/Icons/Logout.png" alt="">
+                    </div>
+                </div>
+                <div class="section_content-details-icons_setting_popup">
+                    <div class="section_content-details-icons_setting_popup_user_close">
+                        <img src="../../../assets/Setting/Close.png" alt="">
+                    </div>
+                    <div class="section_content-details-icons_setting_popup_user">                  
+                        <div class="section_content-details-icons_setting_popup_user_img">
+                            <img src="" alt="" id="profileCopy">
+                            <img src="../../../assets/Setting/Add_Image.png" alt="" id="addImage">
+                            <!-- Input for file upload (hidden) -->
+                            <input type="file" id="profileImageInput" accept="image/*" style="display: none;">
+                        </div>
+                        <div class="section_content-details-icons_setting_popup_user_text">
+                            <p class="name"></p>
+                            <p class="role"></p>
+                        </div>
+                    </div>
+                    <div class="section_content-details-icons_setting_popup_user_submit">
+                        <p id="submit">Submit</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section_content-details-cards">
+                <div class="section_content-details-card" id="section_content-details-card_first">
+                    <div class="section_content-details-card_title">
+                        <div></div>
+                        <p>Personal Information</p>
+                    </div>
+                    <div class="section_content-details-card-content-group">
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Full Name</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p class="name"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Department</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="department"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Position</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="position"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Email</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="email"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Phone</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="phone"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_content-details-card" id="section_content-details-card_second">
+                    <div class="section_content-details-card_title">
+                        <p>Permissions</p>
+                    </div>
+                    <div class="section_content-details-card-content-group">
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Role</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p class="role"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Level</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="level"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Created</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="created"></p>
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Signed in</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill">
+                                <p id="signedin"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_content-details-card" id="section_content-details-card_third">
+                    <div class="section_content-details-card_title">
+                        <div></div>
+                        <p>Display</p>
+                        <div></div>
+                    </div>
+                    <div class="section_content-details-card-content-group">
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Theme</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill_switch">
+                                <div class="switch" onclick="toggleSwitch(this)">
+                                    <div class="toggle"></div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_content-details-card" id="section_content-details-card_fourth">
+                    <div class="section_content-details-card_title">
+                        <div></div>
+                        <p>Account Security</p>
+                        <div></div>
+                    </div>
+                    <div class="section_content-details-card-content-group">
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>Passcode</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill_switch">
+                                <div class="switch" onclick="toggleSwitch(this)">
+                                    <div class="toggle"></div>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="section_content-details-card-content">
+                            <div class="section_content-details-card-content_head">
+                                <p>2FA</p>
+                            </div>
+                            <div class="section_content-details-card-content_fill_switch">
+                                <div class="switch" onclick="toggleSwitch(this)">
+                                    <div class="toggle"></div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_content-details-card" id="section_content-details-card_fifth">
+                    <div class="section_content-details-card_title">
+                        <div></div>
+                        <p>Email</p>
+                        <div></div>
+                    </div>
+                    <div class="section_content-details-card-content-group">
+                        <div class="section_content-details-card-content_box_border">
+                            <div class="section_content-details-card-content_box">
+                                <img src="../../../assets/Setting/Avatar/Avartar.png" alt="">
+                                <div class="section_content-details-card-content-name">
+                                    <p>Ms.Sawarantorn Hongsaward</p>
+                                    <p>Sirijantorn@gmail.com</p>
+                                </div>
+                                <img src="../../../assets/Setting/Email.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_content-details-card" id="section_content-details-card_sixth">
+                    <div class="section_content-details-card_title">
+                        <div></div>
+                        <p>New users</p>
+                        <div></div>
+                    </div>
+                    <div class="section_content-details-card-content-group">
+                        <div class="section_content-details-card-content_box_border">
+                            <div class="section_content-details-card-content_box">
+                                <img src="../../../assets/Setting/Avatar/Avartar2.png" alt="">
+                                <div class="section_content-details-card-content-name">
+                                    <p>Ms.Sirijantorn ngamwong</p>
+                                    <p>Sirijantorn@gmail.com</p>
+                                </div>
+                                <div class="section_content-details-card-content-decide">
+                                    <img src="../../../assets/Setting/Correct.png" alt="">
+                                    <img src="../../../assets/Setting/Incorrect.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../..//6.Setting/Setting_First/Setting_First-Auth.js"></script>
+    <script src="../..//6.Setting/Setting_First/Setting_first-Mysql.js"></script>
+    <script src="../..//6.Setting/Setting_First/Setting_First.js"></script>
+    <script src="../../../components/Assistant/Assistant_left.js"></script>
+    <script src="../../../components/Assistant/Assistant_right-Setting.js"></script>
+    <script src="../../../components/Menu/Menu.js"></script>
+    <script src="/components/Animation/Overview-Animation.js"></script>
+    <script src="/components/Animation/Setting-Animation.js"></script>
+
+
+</body>
+</html>

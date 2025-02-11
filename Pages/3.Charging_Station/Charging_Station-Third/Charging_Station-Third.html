@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEA DATALIZE (Charging Station)</title>
+
+    <!---------------- Logo ---------------->
+    <link rel="shortcut icon" href="../../../assets/Overview/Logo/DATALIZE.png" type="image/x-icon">
+
+    <!---------------- CSS ---------------->
+    <link rel="stylesheet" href="../../2.Overview/Overview.css">
+    <link rel="stylesheet" href="../../3.Charging_Station/Charging_Station-First/Charging_Station-First.css">
+    <link rel="stylesheet" href="../../3.Charging_Station/Charging_Station-Third/Charging_Station-Third.css">
+
+    <!---------------- Fonts ---------------->
+    
+    <!-- Urbanist | Poppins | inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!---------------- Chart ---------------->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+<body>
+    
+    <div class="main">
+        
+        <header-menu></header-menu>
+
+        <assistant-left></assistant-left>
+        <assistant-right-cs></assistant-right-cs>
+        
+
+        <div class="section_content">
+            <div class="section_content-top">
+                    <img src="../../../assets/Charging_Station/BG.png" alt="" class="BG">
+                <div class="section_content-top-details">
+                    <div class="section_content-top-details-banner">
+                        <div class="section_content-top-details-banner_calendar">
+                            <p id="calendar">Sunday, 20 October 2024</p>
+                            <br>
+                            <p id="time">00:00:00</p>
+                        </div>
+                        <div class="section_content-top-details-banner_station">
+                            <p>Charging Station</p>
+                            <br>
+                            <div class="section_content-top-details-banner_station-name">
+                                <p id="selectedStation">NONG KHEAM</p> 
+                                <img src="../../../assets/Charging_Station/arrow.png" id="toggleDropdown" alt="Toggle Dropdown">
+                                <div class="section_content-top-details-banner_station-name-dropdown" id="dropdownMenu">
+                                    <div class="section_content-top-details-banner_station-name-dropdown_options" id="stationOptions">
+                                        <!-- ตัวเลือกสถานีจะถูกสร้างขึ้นโดย JavaScript ที่นี่ -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section_content-top-details-banner_station_transactionid">
+                            <p>All Transaction Charger ID</p>
+                            <br>
+                            <p id="transactionID">00</p>
+                        </div>                    </div>
+                </div>
+            </div>
+
+
+            <div class="section_content-center-third">
+                <div class="section_content-center-transactions">
+                    <div class="section_content-center-transactions_title">
+                        <div class="section_content-center-transactions_title_name">
+                            <p>Transaction Charger ID</p>
+                            <div class="section_content-center-transactions_title_id">
+                                <p id="chargerID">01</p>
+                            </div>
+                            <div class="section_content-center-transactions_title_arrow_dropdown">
+                                <img src="../../../assets/Charging_Station/arrow-outlet_orange.png" id="arrowDropdown_id" alt="">
+                            </div>
+                        </div>
+                        <img src="../../../assets/Charging_Station/Search.png" id="search" alt="">
+                    </div>
+
+
+                    <div class="section_content-center-transactions_head">
+                        <p>DATE</p>
+                        <p>CHARGER ID</p>
+                        <p>CONNECTOR ID</p>
+                        <p>VEHICLE ID</p>
+                        <p>START TIME</p>
+                        <p>END TIME</p>
+                        <p>DURATION</p>
+                        <p>STATUS</p>
+                        <p>ENERGY</p>
+                        <p>START SOC</p>
+                        <p>SOC</p>
+                        <p>END SOC</p>
+                        <p>COST</p>
+                    </div>
+
+                    <div class="section_content-center-search" id="section_content-center-search" >
+                        <div class="section_content-center-search_box">
+                            <input type="text" id="boxsearch_db" placeholder="Search date or vehicle ID">
+                            <img src="../../../assets/Charging_Station/Search.png" id="search_db" alt="">
+                        </div>
+                    </div>
+                    <div class="meesage" id="message"></div>
+
+                    <div class="section_content-center-transactions_head_details" id="transactionTable">
+                        <!--
+                        <div class="section_content-center-transactions_details">
+                            <p>20/10/2024</p>
+                            <p>01</p>
+                            <p>กข-7485</p>
+                            <p>10:33:45</p>
+                            <p>Pending</p>
+                            <p>Pending</p>
+                            <p>Charging</p>
+                            <p>7.5 Kwh</p>
+                            <p>32 %</p>
+                            <p>Pending</p>
+                        </div>
+                     -->
+
+                        <!-- Transactions จาก Mysql -->
+                    </div>
+
+                    <div class="section_content-center-transactions_title_dropdown" id="dropdown_id">
+                        <!-- 
+                        <p class="charger_option" >01</p>
+                        -->
+                    </div>
+
+                    <div class="section_content-center-transactions_pages">
+                        <div class="section_content-center-transactions_pages_text">
+                            <p>Showing 1 to 10 of 50 entries</p>
+                        </div>
+
+                        <div class="section_content-center-transactions_pages_number">
+                            <div class="section_content-center-transactions_pages_number-arrow_left">
+                                <img src="../../../assets/Charging_Station/Number/Multipage_left.png" id="previous_multipage" alt="">
+                                <img src="../../../assets/Charging_Station/Number/Page_left.png" id="previous_page" alt="">
+                            </div>
+                            <div class="section_content-center-transactions_pages_number_group">
+                                <!-- 
+                                <div class="section_content-center-transactions_pages_number_group_box">
+                                    <p>1</p>
+                                </div>
+                                -->
+                            </div>
+                            <div class="section_content-center-transactions_pages_number-arrow_right">
+                                <img src="../../../assets/Charging_Station/Number/Page_right.png" id="next_page" alt="">
+                                <img src="../../../assets/Charging_Station/Number/Multipage_right.png" id="next_multipage" alt="">
+                            </div>
+                            
+                        </div>
+
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section_content-bottom">
+                <div class="section_content-bottom-data">
+
+
+                    <div class="section_content-bottom-data-chart">
+                        <div class="section_content-bottom-data-chart_line">
+                           <div class="section_content-bottom-data-chart_line-title">
+                                <p>Daily EV Charging Statistics</p>
+                                <div class="section_content-bottom-data-chart_line-dropdown">
+                                    <p id="category_chart_daily">Usage (Count)</p>
+                                    <img src="../../../assets/Charging_Station/arrow-outlet.png" id="arrow_dropdown-grap_daily" alt="">
+                                </div>
+                            </div>
+                            <!--
+                            <div class="section_content-bottom-data-chart_line-title_calendar">
+                                <div class="section_content-bottom-data-chart_line-title_calendar_now">
+                                    <p id="currentDate"></p>
+                                </div>
+                            </div>
+                            -->
+                            <div class="section_content-bottom-data-chart_line-contain section_content-bottom-data-chart_dailyline-contain">
+                                <canvas id="myLineChart0"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="section_content-bottom-data-chart">
+                        <div class="section_content-bottom-data-chart_line">
+                           <div class="section_content-bottom-data-chart_line-title">
+                                <p>Weekly EV Charging Statistics</p>
+                                <div class="section_content-bottom-data-chart_line-dropdown">
+                                    <p id="category_chart_weekly">Usage (Count)</p>
+                                    <img src="../../../assets/Charging_Station/arrow-outlet.png" id="arrow_dropdown-grap_weekly" alt="">
+                                </div>
+                            </div>
+                            <div class="section_content-bottom-data-chart_line-title_calendar">
+                                <div class="section_content-bottom-data-chart_line-title-calendar_month">
+                                    <img src="/assets/Charging_Station/arrow-outlet.png" alt="" id="arrow-line_leftMonth">
+                                    <div class="section_content-bottom-data-chart_line-title-calendar_month_selected">
+                                        <p id="line_currentMonth">October</p>
+                                    </div>
+                                    <img src="/assets/Charging_Station/arrow-outlet.png" alt="" id="arrow-line_rightMonth">
+                                </div>
+                                <div class="section_content-bottom-data-chart_line-title_week_option">
+                                    <p id="week1">Week 1</p>
+                                    <p id="week2">Week 2</p>
+                                    <p id="week3">Week 3</p>
+                                    <p id="week4">Week 4</p>
+                                </div>
+                                <div class="section_content-bottom-data-chart_line-title_year">
+                                    <p id="line_currentYear">2024</p>
+                                </div>
+                            </div>
+                            <div class="section_content-bottom-data-chart_line-contain">
+                                <canvas id="myLineChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section_content-bottom-data-chart">
+                        <div class="section_content-bottom-data-chart_heat">
+                            <div class="section_content-bottom-data-chart_heat-title">
+                                <p>Monthly EV Charging Statistics</p>
+                                <div class="section_content-bottom-data-chart_heat-dropdown">
+                                    <p id="category_chart_monthly">Usage (Count)</p>
+                                    <img src="../../../assets/Charging_Station/arrow-outlet.png" id="arrow_dropdown-grap_monthly" alt="">
+                                </div>
+                            </div>
+                            <div class="section_content-bottom-data-chart_heat-title-calendar">
+                                <div class="section_content-bottom-data-chart_heat-title-calendar_month">
+                                    <img src="/assets/Charging_Station/arrow-outlet.png" alt="" id="arrow-heat_leftMonth">
+                                    <div class="section_content-bottom-data-chart_heat-title-calendar_month_selected">
+                                        <p id="heatmap_currentMonth">October</p>
+                                    </div>
+                                    <img src="/assets/Charging_Station/arrow-outlet.png" alt="" id="arrow-heat_rightMonth">
+                                </div>
+                                <p id="heatmap_currentYear">2024</p>
+                            </div>
+                            <div class="section_content-bottom-data-chart_heat-contain">
+                            </div>
+                            <div class="section_content-bottom-data-chart_heat-contain-tooltip" id="tooltip_heatmap">
+
+                            </div>
+                            <div class="section_content-bottom-data-chart_heat-contain_box_label">
+                                <div class="section_content-bottom-data-chart_heat-contain_box">
+                                    <div class="section_content-bottom-data-chart_heat-contain_box_high"></div>
+                                    <p>High Usage</p>
+                                </div>
+                                <div class="section_content-bottom-data-chart_heat-contain_box">
+                                    <div class="section_content-bottom-data-chart_heat-contain_box_medium"></div>
+                                    <p>Medium Usage</p>
+                                </div>
+                                <div class="section_content-bottom-data-chart_heat-contain_box">
+                                    <div class="section_content-bottom-data-chart_heat-contain_box_low"></div>
+                                    <p>Low Usage</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section_content-bottom-data-chart">
+                        <div class="section_content-bottom-data-chart_bar">
+                            <div class="section_content-bottom-data-chart_bar-title">
+                                <p>Yearly EV Charging Statistics</p>
+                                <div class="section_content-bottom-data-chart_bar-dropdown">
+                                    <p id="category_chart_yearly">Usage (Count)</p>
+                                    <img src="../../../assets/Charging_Station/arrow-outlet.png" id="arrow_dropdown-grap_yearly" alt="">
+                                </div>
+                            </div>
+                            <div class="section_content-bottom-data-chart-bar-contain">
+                                <canvas id="myBarChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="section_content-bottom_data-dropdown">
+                    <div class="section_content-bottom_data-dropdown_box_daily" id="section_content-bottom_data-dropdown_daily">
+                        <p>Usage (Count)</p>
+                        <p>Energy (Kwh)</p>
+                    </div>
+                    <div class="section_content-bottom_data-dropdown_box_weekly" id="section_content-bottom_data-dropdown_weekly">
+                        <p>Usage (Count)</p>
+                        <p>Energy (Kwh)</p>
+                    </div>
+                    <div class="section_content-bottom_data-dropdown_box_monthly" id="section_content-bottom_data-dropdown_monthly">
+                        <p>Usage (Count)</p>
+                        <p>Energy (Kwh)</p>
+                    </div>
+                    <div class="section_content-bottom_data-dropdown_box_yearly" id="section_content-bottom_data-dropdown_yearly">
+                        <p>Usage (Count)</p>
+                        <p>Energy (Kwh)</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section_content-pages">
+                <div class="section_content-pages-arrow_left">
+                    <img src="../../../assets/Charging_Station/arrow.png" id="previousID" alt="">
+                </div>
+                <div class="section_content-pages-arrow_right">
+                    <img src="../../../assets/Charging_Station/arrow.png" id="nextID" alt="">
+                </div>
+            </div>
+          
+
+        </div>
+
+
+        
+    </div>
+
+    <script src="/components/Weather/Weather.js"></script>    
+    <script src="../../3.Charging_Station/Charging_Station-Third/Charging_Station-Third-Mysql.js"></script>
+    <script src="../../3.Charging_Station/Charging_Station-First/Charging_Station-First.js"></script>    
+    <script src="../../../components/Assistant/Assistant_left.js"></script>
+    <script src="../../../components/Assistant/Assistant_right-Charging_station.js"></script>
+    <script src="../../../components/Calendar/Calendart.js"></script>
+    <script src="../../../components/Menu/Menu.js"></script>
+    <script src="../../../components/Animation/Overview-Animation.js"></script>
+    <script src="../../../components/Animation/Charging_Station-Animation.js"></script>
+
+
+</body>
+</html>

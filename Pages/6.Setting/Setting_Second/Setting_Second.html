@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEA DATALIZE (Setting)</title>
+
+    <!---------------- Logo ---------------->
+    <link rel="shortcut icon" href="../../../assets/Overview/Logo/DATALIZE.png" type="image/x-icon">
+
+    <!---------------- CSS ---------------->
+    <link rel="stylesheet" href="../../2.Overview/Overview.css">
+    <link rel="stylesheet" href="../../6.Setting/Setting_Second/Setting_Second.css">
+
+    <!---------------- Fonts ---------------->
+    
+    <!-- Urbanist | Poppins | inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+<body>
+    
+    <div class="main">
+
+
+        <header-menu></header-menu>
+
+        <assistant-left></assistant-left>
+        <assistant-right-s></assistant-right-s>
+        
+
+        <div class="section_content">
+            <div class="section_content-center-second">
+                <div class="section_content-center-transactions">
+                    <div class="section_content-center-transactions_title">
+                        <p>Team management</p>
+                        <img src="../../../assets/Charging_Station/Search.png" alt=""  id="search">
+                    </div>
+                    <div class="section_content-center-transactions_head">
+                        <p>Photo</p>
+                        <p>Number</p>
+                        <p>FullName</p>
+                        <p>Email</p>
+                        <p>Phone</p>
+                        <p>Department</p>
+                        <p>Position</p>
+                        <p>Role</p>
+                        <p>Status</p>
+                        <p>Last SignIn</p>
+                        <p>Option</p>
+                    </div>
+
+                    <div class="section_content-center-search" id="section_content-center-search" >
+                        <div class="section_content-center-search_box">
+                            <input type="text" id="boxsearch_db" placeholder="Search date or vehicle ID">
+                            <img src="../../../assets/Charging_Station/Search.png" id="search_db" alt="">
+                        </div>
+                    </div>
+                    <div class="meesage" id="message"></div>
+
+                    <div class="section_content-center-transactions_details-group">
+                   <!--
+                        <div class="section_content-center-transactions_details">
+                            <img src="${profile['photo']}" alt="">
+                            <div>${profile['number']}</div>
+                            <div>${profile['name']}</div>
+                            <div>${profile['email']}</div>
+                            <div>${profile['phone']}</div>
+                            <div>${profile['department']}</div>
+                            <div>${profile['position']}</div>
+                            <div>${profile['role']}</div>
+                            <div>${profile['status']}</div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    -->
+                    </div>
+                    
+                    <div class="section_content-center-transactions_details-options_dropdown">
+                        <!--
+                        <div class="section_content-center-transactions_details-options_dropdown-group">
+                            <div class="section_content-center-transactions_details-options_dropdown-first_list">
+                                <p>Info</p>
+                            </div>
+                            <div class="section_content-center-transactions_details-options_dropdown-second_list">
+                                <div class="section_content-center-transactions_details-options_dropdown-second_list_title">
+                                    <p>Promote</p>
+                                    <img src="../../../assets/Setting/Arrow.png" alt="">
+                                </div>
+                                <div class="section_content-center-transactions_details-options_dropdown-second_list_box">
+                                    <div class="section_content-center-transactions_details-options_dropdown-second_list_box_first-list">
+                                        <p id="Admin">Admin</p>
+                                        <p id="Manager">Manager</p>
+                                        <p id="Member">Member</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section_content-center-transactions_details-options_dropdown-third_list">
+                                <p>Message</p>
+                            </div>
+                            <div class="section_content-center-transactions_details-options_dropdown-fourth_list">
+                                <p>Ban</p>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+
+                    
+                    <div class="section_content-center-transactions_details-alert">
+                        <div class="section_content-center-transactions_details-alert-group">
+                            <div class="section_content-center-transactions_details-alert-promote_up">
+                                <p id="promoteUp"></p>
+                            </div>
+                            <div class="section_content-center-transactions_details-alert-promote_down">
+                                <p id="promoteDown"></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="section_content-center-transactions_pages">
+                        <div class="section_content-center-transactions_pages_text">
+                            <p>Showing 1 to 10 of 50 entries</p>
+                        </div>
+
+                        <div class="section_content-center-transactions_pages_number">
+                            <div class="section_content-center-transactions_pages_number-arrow_left">
+                                <img src="../../../assets/Charging_Station/Number/Multipage_left.png" alt="">
+                                <img src="../../../assets/Charging_Station/Number/Page_left.png" alt="">
+                            </div>
+                            <div class="section_content-center-transactions_pages_number_group">
+                                <!--
+                                <div class="section_content-center-transactions_pages_number_group_box">
+                                    <p>1</p>
+                                </div>
+                                -->
+                            </div>
+                            <div class="section_content-center-transactions_pages_number-arrow_right">
+                                <img src="../../../assets/Charging_Station/Number/Page_right.png" alt="">
+                            <img src="../../../assets/Charging_Station/Number/Multipage_right.png" alt="">
+                            </div>
+                            
+                        </div>
+
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+          
+
+        </div>
+    </div>
+
+    <script src="../../6.Setting/Setting_Second/Setting_Second-Mysql.js"></script>
+    <script src="../../6.Setting/Setting_Second/Setting_Second.js"></script>
+    <script src="../../../components/Assistant/Assistant_left.js"></script>
+    <script src="../../../components/Assistant/Assistant_right-Setting.js"></script>
+    <script src="../../../components/Menu/Menu.js"></script>
+    <script src="/components/Animation/Overview-Animation.js"></script>
+    <script src="/components/Animation/Setting-Animation.js"></script>
+
+
+</body>
+</html>

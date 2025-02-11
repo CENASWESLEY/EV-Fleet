@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEA DATALIZE (Data Analysis)</title>
+
+    <!---------------- Logo ---------------->
+    <link rel="shortcut icon" href="../../../assets/Overview/Logo/DATALIZE.png" type="image/x-icon">
+
+    <!---------------- CSS ---------------->
+    <link rel="stylesheet" href="../../2.Overview/Overview.css">
+    <link rel="stylesheet" href="../../4.Data_Analysis/Data_Analysis-Second/Data_Analysis-Second.css">
+
+    <!---------------- Fonts ---------------->
+    
+    <!-- Urbanist | Poppins | inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!---------------- Chart ---------------->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+<body>
+    
+    <div class="main">
+
+        <header-menu></header-menu>
+
+        <assistant-left></assistant-left>
+        <assistant-right-da></assistant-right-da>
+        
+
+        <div class="section_content">
+            <div class="section_content-top">
+                    <img src="../../../assets/Charging_Station/BG.png" alt="" class="BG">
+                <div class="section_content-top-details">
+                    <div class="section_content-top-details-banner">
+                        <div class="section_content-top-details-banner_calendar">
+                            <p id="calendar">Sunday, 20 October 2024</p>
+                            <br>
+                            <p id="time">00:00:00</p>
+                        </div>
+                        <div class="section_content-top-details-banner_station">
+                            <p>Data Analysis</p>
+                            <br>
+                            <div class="section_content-top-details-banner_station-name">
+                                <p id="selectedStation"></p> 
+                                <img src="../../../assets/Charging_Station/arrow.png" id="toggleDropdown" alt="Toggle Dropdown">
+                                <div class="section_content-top-details-banner_station-name-dropdown" id="dropdownMenu">
+                                    <div class="section_content-top-details-banner_station-name-dropdown_options" id="stationOptions">
+                                        <!-- ตัวเลือกสถานีจะถูกสร้างขึ้นโดย JavaScript ที่นี่ -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="section_content-top-details-banner_category">
+                            <div class="section_content-top-details-banner_category-energy">
+                                <div class="section_content-top-details-banner_category-energy-icon">
+                                    <img src="./../../../assets/Data_Analysis/Icons/Energy.png" alt="">
+                                </div>
+                                <div class="section_content-top-details-banner_category-energy_title">
+                                    <p>Energy</p>
+                                    <p id="Energy_Summary">00 Kwh</p>
+                                </div>
+                            </div>
+                            <div class="section_content-top-details-banner_category-financial">
+                                <div class="section_content-top-details-banner_category-financial-icon">
+                                    <img src="./../../../assets/Data_Analysis/Icons/Financial.png" alt="">
+                                </div>
+                                <div class="section_content-top-details-banner_category-financial_title">
+                                    <p>Financial</p>
+                                    <p id="Financial_Summary">00 k</p>
+                                </div>
+                            </div>
+                            <div class="section_content-top-details-banner_category-green">
+                                <div class="section_content-top-details-banner_category-green-icon">
+                                    <img src="./../../../assets/Data_Analysis/Icons/Green.png" alt="">
+                                </div>
+                                <div class="section_content-top-details-banner_category-green_title">
+                                    <p>Green Energy</p>
+                                    <p id="Green_Summary">00 kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section_content-center">
+                <div class="section_content_center-chart">
+                    <div class="section_content_center-chart_pie-group">
+                        <div class="section_content_center-chart_pie">
+                            <div class="section_content_center-chart_pie-title">
+                                <p id="pieChart_title1"></p>
+                            </div>
+                            <div class="section_content_center-chart_pie-data">
+                                <canvas id="myPieChart1"></canvas>
+                                <div class="section_content_center-chart_pie-data-inner">
+                                    <div class="section_content_center-chart_pie-data-inner_money">
+                                        <img src="../../../assets/Data_Analysis/PieChart/Financial.png" alt="">
+                                        <p id="income_piechart1"></p>
+                                        <p id="unit_piechart1"></p>
+                                    </div>
+                                </div>
+                                <div class="section_content_center-chart_pie-data_station">
+                                    <div class="section_content_center-chart_pie-data_station_name_group">
+                                        <div class="section_content_center-chart_pie-data_station_name">
+                                            <p id="station_name_1-1"></p>
+                                            <p id="station_value_1-1"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section_content_center-chart_pie">
+                            <div class="section_content_center-chart_pie-title">
+                                <p id="pieChart_title2"></p>
+                            </div>
+                            <div class="section_content_center-chart_pie-data">
+                                <canvas id="myPieChart2"></canvas>
+                                <div class="section_content_center-chart_pie-data-inner">
+                                    <div class="section_content_center-chart_pie-data-inner_money">
+                                        <img src="../../../assets/Data_Analysis/PieChart/Financial.png" alt="">
+                                        <p id="income_piechart2"></p>
+                                        <p id="unit_piechart2"></p>
+                                    </div>
+                                </div>
+                                <div class="section_content_center-chart_pie-data_station">
+                                    <div class="section_content_center-chart_pie-data_station_name_group">
+                                        <div class="section_content_center-chart_pie-data_station_name">
+                                            <p id="station_name_2-1"></p>
+                                            <p id="station_value_2-1"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section_content_center-chart_pie">
+                            <div class="section_content_center-chart_pie-title">
+                                <p id="pieChart_title3"></p>
+                            </div>
+                            <div class="section_content_center-chart_pie-data">
+                                <canvas id="myPieChart3"></canvas>
+                                <div class="section_content_center-chart_pie-data-inner">
+                                    <div class="section_content_center-chart_pie-data-inner_money">
+                                        <img src="../../../assets/Data_Analysis/PieChart/Financial.png" alt="">
+                                        <p id="income_piechart3"></p>
+                                        <p id="unit_piechart3"></p>
+                                    </div>
+                                </div>
+                                <div class="section_content_center-chart_pie-data_station">
+                                    <div class="section_content_center-chart_pie-data_station_name_group">
+                                        <div class="section_content_center-chart_pie-data_station_name">
+                                            <p id="station_name_3-1"></p>
+                                            <p id="station_value_3-1"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section_content_center-chart_pie">
+                            <div class="section_content_center-chart_pie-title">
+                                <p id="pieChart_title4"></p>
+                            </div>
+                            <div class="section_content_center-chart_pie-data">
+                                <canvas id="myPieChart4"></canvas>
+                                <div class="section_content_center-chart_pie-data-inner">
+                                    <div class="section_content_center-chart_pie-data-inner_money">
+                                        <img src="../../../assets/Data_Analysis/PieChart/Financial.png" alt="">
+                                        <p id="income_piechart4"></p>
+                                        <p id="unit_piechart4"></p>
+                                    </div>
+                                </div>
+                                <div class="section_content_center-chart_pie-data_station">
+                                    <div class="section_content_center-chart_pie-data_station_name_group">
+                                        <div class="section_content_center-chart_pie-data_station_name">
+                                            <p id="station_name_4-1"></p>
+                                            <p id="station_value_4-1"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section_content_center-chart_selector">
+                            <div class="section_content_center-chart_selector-icon_data">
+                                <div class="section_content_center-chart_selector-icon_data-export">
+                                    <img src="../../../assets/Data_Analysis/Data/Export.png" alt="">
+                                    <p>Export</p>
+                                </div>
+                                <div class="section_content_center-chart_selector-icon_data-share">
+                                    <img src="../../../assets/Data_Analysis/Data/Share.png" alt="">
+                                    <p>Share</p>
+                                </div>
+                            </div>
+                            <div class="section_content_center-chart_selector-icon_data-category_all">
+                                <div class="section_content_center-chart_selector-icon_data-category_year">
+                                    <div class="section_content_center-chart_selector-icon_data-category_year_title">
+                                        <p>Yearly Data</p>
+                                        <img src="../../../assets/Data_Analysis/arrow_left_outlet.png" alt="">
+                                    </div>
+                                    <div class="section_content_center-chart_selector-icon_data-category_year_group_box">
+                                        <div class="section_content_center-chart_selector-icon_data-category_year_box" id="2024">
+                                            <p>2024</p>
+                                        </div>
+                                        <div class="section_content_center-chart_selector-icon_data-category_year_box" id="2023">
+                                            <p>2023</p>
+                                        </div>
+                                        <div class="section_content_center-chart_selector-icon_data-category_year_box" id="2022">
+                                            <p>2022</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section_content_center-chart_selector-icon_data-category_icon">
+                                    <div class="section_content_center-chart_selector-icon_data-category_icon_title">
+                                        <p>Periodical Data</p>
+                                        <img src="../../../assets/Data_Analysis/arrow_left_outlet.png" alt="">
+                                    </div>
+                                    <div class="section_content_center-chart_selector-icon_data-category-period_group_box">
+                                        <div class="section_content_center-chart_selector-icon_data-category-period_box" id="Weekly">
+                                            <p>Weekly</p>
+                                        </div>
+                                        <div class="section_content_center-chart_selector-icon_data-category-period_box" id="Monthly">
+                                            <p>Monthly</p>
+                                        </div>
+                                        <div class="section_content_center-chart_selector-icon_data-category-period_box" id="Yearly">
+                                            <p>Yearly</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section_content_center-chart_selector-icon_data-category_icon">
+                                    <div class="section_content_center-chart_selector-icon_data-category_icon_title">
+                                        <p>Category</p>
+                                        <img src="../../../assets/Data_Analysis/arrow_left_outlet.png" alt="">
+                                    </div>
+                                    <div class="section_content_center-chart_selector-icon_data-category_icon_group_box">
+                                        <div class="section_content_center-chart_selector-icon_data-category_icon_box" id="Energy">
+                                            <img src="../../../assets/Data_Analysis/Catagory/Energy-inactive.png" alt="Energy" >
+                                        </div>
+                                        <div class="section_content_center-chart_selector-icon_data-category_icon_box" id="Financial">
+                                            <img src="../../../assets/Data_Analysis/Catagory/Financial-inactive.png" alt="Financial">
+                                        </div>
+                                        <div class="section_content_center-chart_selector-icon_data-category_icon_box" id="Green">
+                                            <img src="../../../assets/Data_Analysis/Catagory/Green-inactive.png" alt="Green">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="section_content_center-chart_yearly">
+                        <div class="section_content_center-chart_yearly_bar">
+                            <div class="section_content_center-chart_yearly_bar_title">
+                                <div class="section_content_center-chart_yearly_bar_title_text">
+                                    <p id="selectedLists_bar"></p>
+                                    <img src="../../../assets/Data_Analysis/arrow_outlet.png" id="arrowDropdown_bar" alt="">
+                                </div>
+                                <div class="section_content_center-chart_yearly_bar_value">
+                                    <div class="section_content_center-chart_yearly_bar_value_max">
+                                        <p id="bar_max">00</p>
+                                        <p>MAX</p>
+                                    </div>
+                                    <div class="section_content_center-chart_yearly_bar_value_avg">
+                                        <p id="bar_avg">00</p>
+                                        <p>AVG</p>
+                                    </div>
+                                    <div class="section_content_center-chart_yearly_bar_value_min">
+                                        <p id="bar_min">00</p>
+                                        <p>MIN</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section_content_center-chart_yearly_bar_title-dropdown" id="dropdownMenu_bar">
+                                <div class="section_content_center-chart_yearly_bar_title-dropdown_options" id="ListOptions_bar">
+                                    <!-- ตัวเลือกจะถูกสร้างขึ้นโดย JavaScript ที่นี่ -->
+                                </div>
+                            </div>
+                            <div class="section_content_center-chart_yearly_bar_contain">
+                                <canvas id="myBarChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="section_content_center-chart_yearly_line">
+                            <div class="section_content_center-chart_yearly_line_title">
+                                <div class="section_content_center-chart_yearly_line_title_text">
+                                    <p id="selectedLists_line"></p>
+                                    <img src="../../../assets/Data_Analysis/arrow_outlet.png" id="arrowDropdown_line"alt="">
+                                </div>
+                                <div class="section_content_center-chart_yearly_line_value">
+                                    <div class="section_content_center-chart_yearly_line_value_max">
+                                        <p id="line_max">00</p>
+                                        <p>MAX</p>
+                                    </div>
+                                    <div class="section_content_center-chart_yearly_line_value_avg">
+                                        <p id="line_avg">00</p>
+                                        <p>AVG</p>
+                                    </div>
+                                    <div class="section_content_center-chart_yearly_line_value_min">
+                                        <p id="line_min">00</p>
+                                        <p>MIN</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section_content_center-chart_yearly_line_title-dropdown" id="dropdownMenu_line">
+                                <div class="section_content_center-chart_yearly_line_title-dropdown_options" id="ListOptions_line">
+                                    <!-- ตัวเลือกจะถูกสร้างขึ้นโดย JavaScript ที่นี่ -->
+                                </div>
+                            </div>
+                            <div class="section_content_center-chart_yearly_line_contain">
+                                <canvas id="myLineChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../4.Data_Analysis/Data_Analysis-Second/Data_Analysis-Second-Mysql.js"></script>
+    <script src="../../4.Data_Analysis/Data_Analysis-Second/Data_Analysis-Second.js"></script>
+    <script src="../../../components/Assistant/Assistant_left.js"></script>
+    <script src="../../../components/Assistant/Assistant_right-Data_Analysis.js"></script>
+    <script src="../../../components/Calendar/Calendart.js"></script>
+    <script src="../../../components/Menu/Menu.js"></script>
+    <script src="../../../components/Animation/Overview-Animation.js"></script>
+    <script src="../../../components/Animation/Data_Analysis-Animation.js"></script>
+
+
+</body>
+</html>
