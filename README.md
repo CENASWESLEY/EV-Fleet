@@ -1,3 +1,3 @@
 DEVELOPMENT OF A CROSS-PLATFORM DEVICE CONTROL AND MONITOR SYSTEM FOR MOBILE AND WEB APPLICATIONS
 
-![image](https://github.com/user-attachments/assets/8cb9b703-3a89-4c8f-b556-28f7e62e5666)
+![image](https://github.com/CENASWESLEY/EV-Fleet/blob/d40ab8430ee503db2db4255ef28f4679d644cebd/Cover.png)
