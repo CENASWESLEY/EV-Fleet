@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // เรียกฟังก์ชันโหลดข้อมูลสถานีที่เลือกพร้อม connector 1 เป็นค่า default
     loadStationData(selectedStation, currentConnector);
-    Weather(selectedStation);
     Cards(currentConnector);
 
     //นับจำนวนตัวเลขสถานะ
